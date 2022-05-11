@@ -3,8 +3,7 @@ $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
     GetUsersForReceiveSeals();
     LoadSecuritySeals();
-
-
+    $('select').select2(); 
 })
 
 function GetUsersForReceiveSeals() {
@@ -25,17 +24,6 @@ function GetUsersForReceiveSeals() {
 
 function LoadSecuritySeals() {
 
-    // $('#tbSeals').DataTable({
-    //     columns: [
-
-    //         { title: "Name" },
-    //         { title: "Position" },
-    //         { title: "Office" },
-    //         { title: "Extn." },
-    //         { title: "Start date" },
-    //         { title: "Salary" }
-    //     ]
-    // });
     
     $.post('main.php', {
         action: 'LoadSecuritySeals'
@@ -47,13 +35,13 @@ function LoadSecuritySeals() {
           data: e.r,
 
           columns: [
-            { title: "Name" },
-            { title: "Position" },
-            { title: "Office" },
-            { title: "Extn." },
-            { title: "Start date" },
-            { title: "Start date2" },
-            { title: "Salary" }
+            { className: "clasetest", title: "Name" },
+            { className: "clasetest", title: "Position" },
+            { className: "clasetest", title: "Office" },
+            { className: "clasetest", title: "Extn." },
+            { className: "clasetest", title: "Start date" },
+            { className: "clasetest", title: "Start date2" },
+            { className: "clasetest", title: "Salary" }
         ]
         
         });
