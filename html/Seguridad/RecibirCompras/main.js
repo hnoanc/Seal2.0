@@ -50,14 +50,12 @@ function AddSealsFromPurchase() {
         Data: data
       }, function (e) {
         if (!e.error) {
-          //Core.ShowNotific8('La transacción fue registrada correctamente', 'lime', false);
-          //window.open('pdf.php?User=' + $('#CB_User').val() + '&Type=R&InitialFolio=' +$('#Txt_InitialFolio').val() +'&FinalFolio='+$('#Txt_FinalFolio').val() +'&UserR', '_blank');
           const div = document.getElementById("divAlert");
-          
           document.getElementById("alertMessage").textContent="Guardado correctamente";
           div.style.backgroundColor = "#6ab150"
-          document.getElementsByTagName("input")[0].value = "";
-          window.open('pdf.php?User=' + $('#CB_User').val() + '&Type=R&InitialFolio=' +$('#Txt_InitialFolio').val() +'&FinalFolio='+$('#Txt_FinalFolio').val() +'&UserR', '_blank');
+          window.open('pdf.php?User=' + $('#cbxUser').val() + '&Type=R&InitialFolio=' + $('#txtFolioInicial').val() +'&FinalFolio='+$('#txtFolioFinal').val() +'&UserR', '_blank');
+          //document.getElementsByTagName("input")[0].value = "";
+        
         }else{
           document.getElementById("alertMessage").textContent="Ha fallado correctamente";
           div.style.backgroundColor = "#f86f6f"
@@ -70,7 +68,6 @@ function GetUsersForReceiveSeals() {
     action: 'GetUsersForReceiveSeals'
   }, function (e) {
     if (!e.error) {
-      //Core.HtmlLoad($('#CB_User'), '../../Templates/CoreTemplate.html', 'SelectItem', e.r);
       var $select = $('#cbxUser');
       for (let i = 0; i < e.r.length; i++) {
           $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
