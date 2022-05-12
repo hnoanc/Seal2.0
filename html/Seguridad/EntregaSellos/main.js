@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
+    $('head').load('../../head.html');
+   // $(function(){ $("foot").load("../../foot.html") });
     GetUsersForReceiveSeals();
     LoadSecuritySeals();
     $('select').select2(); 
@@ -35,13 +37,13 @@ function LoadSecuritySeals() {
           data: e.r,
 
           columns: [
-            { className: "clasetest", title: "Name" },
-            { className: "clasetest", title: "Position" },
-            { className: "clasetest", title: "Office" },
-            { className: "clasetest", title: "Extn." },
-            { className: "clasetest", title: "Start date" },
-            { className: "clasetest", title: "Start date2" },
-            { className: "clasetest", title: "Salary" }
+            { className: "", title: "Name" },
+            { className: "", title: "Position" },
+            { className: "", title: "Office" },
+            { className: "", title: "Extn." },
+            { className: "", title: "Start date" },
+            { className: "", title: "Start date2" },
+            { className: "", title: "Salary" }
         ]
         
         });

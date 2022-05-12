@@ -1,0 +1,9 @@
+document.write('<script src=../../../assets/vendor/jquery/jquery-3.3.1.min.js"><\/script>');
+document.write('<script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.js"><\/script>');
+document.write('<script src="../../../assets/vendor/slimscroll/jquery.slimscroll.js"><\/script>');
+document.write('<script src="../../../assets/libs/js/main-js.js"><\/script>');
+document.write('<script src="https://code.jquery.com/jquery-3.2.1.min.js"><\/script>');
+document.write('<script src="../../../assets/js/libs/DataTables/jquery.dataTables.min.js"><\/script>');
+document.write('<script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"><\/script>');
+document.write('<script src="main.js"><\/script>');
+document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js""><\/script>');
