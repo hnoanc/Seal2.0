@@ -2,16 +2,25 @@
 <html lang="en">
  
 <head>
+   
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="stylesheet" href="../../../assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Bootstrap CSS -->
+
     <link href="../../../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../assets/libs/css/style.css">
+    <link rel="stylesheet" href="styles.css">
+
     <link rel="stylesheet" href="../../../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
     <title>SEAL</title>
+
+
+  
 </head>
 
 <body>
@@ -84,14 +93,19 @@
                         <div class="card">
                             <h5 class="card-header">Recibir compras</h5>
                             <div class="card-body">
-                                   
+
+                    <!-- ============================================================== -->
+                    <!-- Selectpick USUARIOS-->
+                    <!-- ============================================================== -->
+
                                     <div class="row">
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
-                                            <select name="cbxUser" class="form-control form-control-lg" id="cbxUser">
+                                            <select name="cbxUser" data-style="lg-white rounded-pill px-1080 py-1920 shadow-md " class="selectpicker" style="width: 1560px;" id="cbxUser">
                                                 <option value="" disabled selected>Usuario que entrega:</option>
                                             </select>
                                         </div>
-                                        
+                    <!-- ============================================================== -->
+
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12 mb-2">
@@ -109,13 +123,17 @@
                                             <input type="number" class="form-control form-control-lg" id="txtCantidad" placeholder="Cantidad:" required>
                                         </div>
 
+                    <!-- ============================================================== -->
+                    <!-- Selectpick PROVEEDORES-->
+                    <!-- ============================================================== -->
+
                                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb-2">
                                             <label for="validationCustom03"></label>
-                                            <select name="cbxProveedor" class="form-control form-control-lg" id="cbxProveedor" >
+                                            <select name="cbxProveedor" data-style="lg-white rounded-pill px-1080 py-1920 shadow-md " class="selectpicker" style="width: 350px;" id="cbxProveedor" >
                                                 <option value="" disabled selected>Proveedor:</option>
                                               </select>
                                         </div>
-
+                    <!-- ============================================================== -->
                                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb-2">
                                             <label for="validationCustom04"></label>
                                             <input type="text" class="form-control form-control-lg" id="txtColor" placeholder="Color:" required>
