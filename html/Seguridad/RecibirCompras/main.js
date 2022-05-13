@@ -2,7 +2,11 @@ $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
     GetUsersForReceiveSeals();
     GetSuppliers();
-    $('select').select2();
+    
+    $('select').select2({
+      width: "100%"
+    });
+    
 
     $('#btnGuardar').click(function () {
       let folioInicial =$('#txtFolioInicial').val()
