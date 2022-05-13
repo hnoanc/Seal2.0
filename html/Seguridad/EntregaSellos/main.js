@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
-    $('head').load('../../head.html');
    // $(function(){ $("foot").load("../../foot.html") });
     GetUsersForReceiveSeals();
     LoadSecuritySeals();
