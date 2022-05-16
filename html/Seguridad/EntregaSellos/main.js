@@ -37,13 +37,13 @@ function LoadSecuritySeals() {
           data: e.r,
 
           columns: [
-            { title: "Name" },
-            { title: "Position" },
-            { title: "Office" },
-            { title: "Extn." },
-            { title: "Start date" },
-            { title: "Start date2" },
-            { title: "Salary" }
+            { title: "ID" },
+            { title: "Color" },
+            { title: "Proveedor" },
+            { title: "Requisicion." },
+            { title: "Referencia" },
+            { title: "Status" },
+            { title: "Fecha adquisicion" }
         ]
         
         });
