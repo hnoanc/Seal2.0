@@ -33,6 +33,7 @@ function LoadSecuritySeals() {
           console.log(e.r);
 
         $('#tbSeals').DataTable({
+          pagingType: 'full_numbers',
           data: e.r,
 
           columns: [
