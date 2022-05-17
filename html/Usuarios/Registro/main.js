@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#navbarNav').load('../navMenu.html');
+    $('#navbarNav').load('../../navMenu.html');
     GetUsersForReceiveSeals();
 
   $('select').select({
