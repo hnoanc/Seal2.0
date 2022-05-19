@@ -74,7 +74,7 @@ function LoadUsersInfo() {
       ]
       
       });  
-      document.getElementById("UserIDPass").value = "oh no voy a perder la competencia"; psh nomas viene la linea de codigo
+      document.getElementById("UserIDPass").value = "oh no voy a perder la competencia";
 
       
       }
