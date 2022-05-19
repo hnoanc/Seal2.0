@@ -3,7 +3,7 @@ var editor;
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
     /*LoadSecuritySeals();*/
-    LoadUsers();
+    LoadUsersInfo();
 
 
  /* $('select').select({
@@ -47,10 +47,10 @@ $(document).ready(function(){
 }*/
 
 
-function LoadUsers() {
+function LoadUsersInfo() {
   
   $.post('main.php', {
-      action: 'LoadUsers'
+      action: 'LoadUsersInfo'
     }, function (e) {
       if (!e.error) {
         console.log(e.r);
@@ -72,9 +72,9 @@ function LoadUsers() {
           "className": "button",
           "defaultContent": "<button type='button' name='BtnEd' class='btn btn-icon-toggle' data-toggle='modal' data-target='#ModUs'><i class='fas fa-edit'></i></button>"}
       ]
-
       
       });  
+      document.getElementById("UserIDPass").value = "oh no voy a perder la competencia"; psh nomas viene la linea de codigo
 
       
       }

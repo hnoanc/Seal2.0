@@ -500,7 +500,7 @@ class Admin extends Anonymous
     return json_encode($retval);
   }
 
-  function LoadUsers(){
+  function LoadUsersInfo(){
     $cnx=$this->connectSqlSrv();
     $sth=$cnx->prepare("Exec sp_GetUsers");
     $retval=$this->ExecuteSelectArray($sth);
