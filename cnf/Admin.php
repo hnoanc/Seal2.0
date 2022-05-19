@@ -458,7 +458,7 @@ class Admin extends Anonymous
   //    -------------------------------------------------     ///LoadSealsWithOutPaid
   function GetDepartments(){
     $cnx=$this->connectSqlSrv();
-		$sth = $cnx->prepare("EXEC sp_GetDepartments");
+		$sth = $cnx->prepare("EXEC GetDepartments");
     $retval=$this->ExecuteSelectAssoc($sth);
 
     return json_encode($retval);

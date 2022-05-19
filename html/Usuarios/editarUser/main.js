@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
     /*LoadSecuritySeals();*/
     LoadUsersInfo();
+    GetRoles();
 
 
  /* $('select').select({
@@ -74,12 +75,23 @@ function LoadUsersInfo() {
       ]
       
       });  
-      document.getElementById("UserIDPass").value = "oh no voy a perder la competencia";
+      document.getElementById("UserIDPass").value = "test";
 
       
       }
     });
     return false;
+}
+
+function GetRoles() {
+  $.post('main.php', {
+    action: 'GetRoles'
+  }, function (e) {
+    if (!e.error) {
+      Core.HtmlLoad($('#CB_Roll'), '../../Templates/CoreTemplate.html', 'SelectItem', e.r);
+    }
+  });
+  return false;
 }
 
 

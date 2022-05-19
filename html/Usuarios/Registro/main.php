@@ -8,8 +8,9 @@ if(isset($_POST['action'])){
 		echo $obj->GetUsersForReceiveSeals();
 			break;
 		case 'GetDepartments':
-				echo $obj->GetDepartments();
+			echo $obj->GetDepartments();
 			break;
+
 	}
 }
 ?>
