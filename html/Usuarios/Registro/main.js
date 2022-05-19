@@ -22,7 +22,7 @@ function GetUsersForReceiveSeals() {
     });
     return false;
   }
-/*
+
   function GetDepartments() {
     $.post('main.php', {
       action: 'GetDepartments'
@@ -36,4 +36,4 @@ function GetUsersForReceiveSeals() {
       
     });
     return false;
-  }*/
+  }
