@@ -37,7 +37,7 @@ class Admin extends Anonymous
   function AddSealsFromPurchase($Data){
     session_start();
     $cnx=$this->connectSqlSrv();
-    $sth=$cnx->prepare("Exec sp_AddNewSeals ?,?,?,?,?,?,?,?,?,?");
+    $sth=$cnx->prepare("Exec sp_AddNewSeals ?,?,?,?,?,?,?,?,?,?,?");
     $sth->bindParam(1, $Data["InitialFolio"]);
     $sth->bindParam(2, $Data["FinalFolio"]);
     $sth->bindParam(3, $Data["UserDelivery"]);
@@ -49,6 +49,7 @@ class Admin extends Anonymous
     $sth->bindParam(8, $Data["Status"]);
     $sth->bindParam(9, $_SESSION['SESSINFOSEAL']['User_Usr']);
     $sth->bindParam(10, $_SESSION['SESSINFOSEAL']['Ofice_ID']);
+    $sth->bindParam(11, $Data["Quantity"]);
     //session_write_close();
     $retval=$this->ExecuteNoQuery($sth);
     return json_encode($retval);

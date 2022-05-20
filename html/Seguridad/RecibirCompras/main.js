@@ -15,11 +15,12 @@ $(document).ready(function () {
       let color =$('#txtColor').val()
       let proveedor = $('#cbxProveedor').val()
       let referencia = $('#txtReferencia').val()
+      let quantity = $('#txtCantidad').val()
 
       var elements = document.querySelectorAll("input[type='text'],input[type='number'], input[type='number']");
 
-      if (folioInicial == '' || folioFinal == '' || user == '' || color == '' || proveedor == '' || referencia == '' ||
-          folioInicial == null || folioFinal == null || user == null || color == null || proveedor == null || referencia == null) {
+      if (folioInicial == '' || folioFinal == '' || user == '' || color == '' || proveedor == '' || referencia == '' || quantity == '' ||
+          folioInicial == null || folioFinal == null || user == null || color == null || proveedor == null || referencia == null || quantity == null) {
         alert('Favor de llenar todos los campos')
       } else {
         AddSealsFromPurchase();
@@ -30,14 +31,15 @@ $(document).ready(function () {
 
 function AddSealsFromPurchase() {
   
-  var objects = [
+  /*var objects = [
     ['#CB_User', '#FG_User', '#CB_UserE'],
     ['#Txt_Quantity', '#FG_Quantity', '#Txt_QuantityE'],
     ['#Txt_InitialFolio', '#FG_InitialFolio', '#Txt_InitialFolioE'],
     ['#Txt_FinalFolio', '#FG_FinalFolio', '#Txt_FinalFolioE'],
     ['#CB_Supplier', '#FG_Supplier', '#CB_SupplierE']
     
-  ];
+  ];*/
+
     var data = {
       'InitialFolio': $('#txtFolioInicial').val(),
       'FinalFolio': $('#txtFolioFinal').val(),
@@ -47,6 +49,7 @@ function AddSealsFromPurchase() {
       'Requisition_ID': 0,
       'Reference': $('#txtReferencia').val(),
       'Status': 1,
+      'Quantity': $('#txtCantidad').val()
     };
   
       $.post('main.php', {
