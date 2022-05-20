@@ -7,7 +7,12 @@ if(isset($_POST['action'])){
 		case 'LoadUsersInfo':
 		echo $obj->LoadUsersInfo();
 			break;
-
+		case 'GetUserInfo':
+        echo $obj->GetUserInfo($_POST['Data']);
+		     break;
+		case 'GetDepartments':
+		echo $obj->GetDepartments();
+		     break;
 	}
 }
 ?>

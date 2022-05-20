@@ -4,49 +4,16 @@ $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
     /*LoadSecuritySeals();*/
     LoadUsersInfo();
-    GetRoles();
+    GetUserInfo();
+    GetDepartments();
+  /*  GetRoles();*/
+   
 
 
  /* $('select').select({
          with:"100%"
      });   */
 })
-
-
-/*function LoadSecuritySeals() {
-  
-  $.post('main.php', {
-      action: 'LoadSecuritySeals'
-    }, function (e) {
-      if (!e.error) {
-        console.log(e.r);
-
-      $('#tbUser').DataTable({
-        pagingType: 'full_numbers',
-        data: e.r,
-
-        columns: [
-          { title: "ID" },
-          { title: "Color" },
-          { title: "Proveedor" },
-          { title: "Requisicion." },
-          { title: "Referencia" },
-          { title: "Status" },
-          { title: "Fecha adquisicion" },
-          {"data": null,
-          "className": "button",
-          "defaultContent": "<button type='button' name='BtnEd' class='btn btn-icon-toggle' data-toggle='modal' data-target='#ModUs'><i class='fas fa-edit'></i></button>"}
-      ]
-
-      
-      });  
-
-      
-      }
-    });
-    return false;
-}*/
-
 
 function LoadUsersInfo() {
   
@@ -61,7 +28,7 @@ function LoadUsersInfo() {
         data: e.r,
 
         columns: [
-          { title: "ID"},
+          { name: "ID",title: "ID"},
           { title: "Nombre"},
           { title: "Rol"},
           { title: "Departamento"},
@@ -71,29 +38,60 @@ function LoadUsersInfo() {
           {title: "Estado"},
           {"data": null,
           "className": "button",
-          "defaultContent": "<button type='button' name='BtnEd' class='btn btn-icon-toggle' data-toggle='modal' data-target='#ModUs'><i class='fas fa-edit'></i></button>"}
-      ]
+          "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo()" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}
       
-      });  
-      document.getElementById("UserIDPass").value = "test";
+         ,
+        ]         
+                                                                                 /*onclick="GetUserInfo('+e.r[i][0]+')"*/ 
+                 
+      }); 
 
-      
+
       }
     });
     return false;
 }
 
-function GetRoles() {
+
+
+function GetUserInfo(id) {
+
+  var Data = {
+    'ID': id
+  };
+
   $.post('main.php', {
-    action: 'GetRoles'
+    action: 'GetUserInfo',
+    Data: Data
   }, function (e) {
     if (!e.error) {
-      Core.HtmlLoad($('#CB_Roll'), '../../Templates/CoreTemplate.html', 'SelectItem', e.r);
+      $('#UserIDPass').val(e.r[0][0]);
+      $('#UserPass').val(e.r[0][1]);
+      $('#CB_Roll').val(e.r[0][2]);
+      $('#CB_Roll').trigger('change');
+      if(e.r[0][3]==1){
+        $('input[value=1]').attr('checked', 'checked');
+      }
+      else{
+       $('input[value=0]').attr('checked', 'checked');
+      }
     }
+  });
+}
+
+function GetDepartments() {
+  $.post('main.php', {
+    action: 'GetDepartments'
+  }, function (e) {
+    if (!e.error) {
+      var $select = $('#CB_Roll');
+      for (let i = 0; i < e.r.length; i++) {
+          $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
+      }
+    }
+    
   });
   return false;
 }
 
-
-/*RegUsr*/
 

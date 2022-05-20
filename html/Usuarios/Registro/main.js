@@ -37,3 +37,5 @@ function GetUsersForReceiveSeals() {
     });
     return false;
   }
+
+  
