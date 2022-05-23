@@ -61,7 +61,7 @@ function AddSealsFromPurchase() {
           document.getElementById("alertMessage").textContent="Guardado correctamente";
           div.style.backgroundColor = "#6ab150"
           window.open('pdf.php?User=' + $('#cbxUser').val() + '&Type=R&InitialFolio=' + $('#txtFolioInicial').val() +'&FinalFolio='+$('#txtFolioFinal').val() +'&UserR', '_blank');
-          //document.getElementsByTagName("input")[0].value = "";
+          limpiar()
         
         }else{
           document.getElementById("alertMessage").textContent="Ha fallado correctamente";
@@ -99,4 +99,11 @@ function GetSuppliers() {
     
   });
   return false;
+}
+
+function limpiar()
+{
+    $('input[type="text"]').val('');
+    $('input[type="number"]').val('');
+    $('select').val(1);
 }
