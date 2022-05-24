@@ -2,6 +2,10 @@
 $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
     GetUsersForReceiveSeals();
+    
+    $('select').select2({
+      width: "100%"
+    });
 })
 
 function GetUsersForReceiveSeals() {
