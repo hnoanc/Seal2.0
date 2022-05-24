@@ -1,16 +1,16 @@
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
-    /*LoadSecuritySeals();*/
+    LoadSecuritySeals();
     /*LoadUsersInfo();
-    GetUserInfo();
+    /*GetUserInfo();
     GetDepartments();
   /*  GetRoles();*/
 })
 
-function LoadUsersInfo() {
+function LoadSecuritySeals() {
   
     $.post('main.php', {
-        action: 'LoadUsersInfo'
+        action: 'LoadSecuritySeals'
       }, function (e) {
         if (!e.error) {
           console.log(e.r);
@@ -28,7 +28,7 @@ function LoadUsersInfo() {
             { title: "Control"},
             {"data": null,
             "className": "button",
-            "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo()" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}
+            "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo()" data-toggle="modal" data-target="#ModUs"><i class="fas fa-eye"></i></button>'}
         
            ,
           ] 

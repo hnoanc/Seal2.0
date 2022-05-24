@@ -4,9 +4,11 @@ if(isset($_POST['action'])){
 	$obj =  new Admin();
 	header('Content-Type: application/json');
 	switch ($_POST['action']) {
-		case 'GetUsersForReceiveSeals':
-		echo $obj-> GetUsersForReceiveSeals();
+		case 'GetUsersForReceiveFromSecurity':
+		echo $obj-> GetUsersForReceiveFromSecurity();
 		break;
+		case 'LoadSecuritySeals':
+			echo $obj->LoadSecuritySeals();
 	}
 }
 ?>

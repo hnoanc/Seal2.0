@@ -1,16 +1,17 @@
 
 $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
-    GetUsersForReceiveSeals();
+    GetUsersForReceiveFromSecurity();
+    LoadSecuritySeals(); /* <---- Test de tabla*/ 
     
     $('select').select2({
       width: "100%"
     });
 })
 
-function GetUsersForReceiveSeals() {
+function GetUsersForReceiveFromSecurity() {
     $.post('main.php', {
-      action: 'GetUsersForReceiveSeals'
+      action: 'GetUsersForReceiveFromSecurity'
     }, function (e) {
       if (!e.error) {
         var $select = $('#cbxUser');
@@ -21,4 +22,38 @@ function GetUsersForReceiveSeals() {
       
     });
     return false;
+}
+
+function LoadSecuritySeals() {
+
+    
+  $.post('main.php', {
+      action: 'LoadSecuritySeals'
+    }, function (e) {
+      if (!e.error) {
+        console.log(e.r);
+
+      $('#tbSeals').DataTable({
+        pagingType: 'full_numbers',
+        data: e.r,
+
+        columns: [
+          { title: "No. Sello" },
+          { title: "Fuente" },
+          { title: "Color" },
+          { title: "Proveedor" },
+          { title: "Requisicion" },
+          { title: "Viaje" },
+          { title: "Status" },
+          { title: "Fecha Recibido" }
+      ]
+      
+      });
+          
+      }
+    });
+    return false;
+
+  
+
 }
