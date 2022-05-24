@@ -12,7 +12,7 @@ function GetUsersForReceiveSeals() {
       action: 'GetUsersForReceiveSeals'
     }, function (e) {
       if (!e.error) {
-        //Core.HtmlLoad($('#CB_User'), '../../Templates/CoreTemplate.html', 'SelectItem', e.r);
+       
         var $select = $('#cbxUser');
         for (let i = 0; i < e.r.length; i++) {
             $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
