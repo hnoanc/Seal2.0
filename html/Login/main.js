@@ -32,7 +32,7 @@ function UserLogin() {
         if (!e.error) {
             console.log(e)
             if (e.r[0]['Role_Name'] == 'Sistemas/Admin' || e.r[0]['Role_Name'] == 'Administrador') {
-                window.location.replace("../Seguridad/RecibirCompras");
+                window.location.replace("../General/RecibirCompras");
             } /*else if (e.r[0]['Role_Name'] == 'Seguridad') {
                 window.location.replace("../Seguridad/Dashboard");
             } else if (e.r[0]['Role_Name'] == 'Despacho Impo') {
