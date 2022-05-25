@@ -42,58 +42,35 @@ function LoadAllSecuritySeals() {
             { title: "Fecha Recibido" }
         ],
         buttons: [ 
-            {
-                extend:    'copyHtml5',
-                text:      'Copiar',
-                title:'Reporte',
-                titleAttr: 'Copiar',
-                className: 'btn btn-app export barras',
-                exportOptions: {
-                    columns: [ 0, 1, 2, 3, 4 , 5, 6, 7, 8]
+                {
+                    extend: 'copyHtml5',
+                    text: '<i class="fas fa-copy"></i> Copy',
+                    titleAttr: 'Copy'
+                },
+                {
+                    extend: 'excelHtml5',
+                    text: '<i class="fas fa-file-excel"></i> Excel',
+                    titleAttr: 'Excel'
+                },
+                {
+                    extend: 'csvHtml5',
+                    text: '<i class="fas fa-file-csv"></i> CSV',
+                    titleAttr: 'CSV'
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i> PDF',
+                    titleAttr: 'PDF'
+                },
+                {
+                    extend: 'print',
+                    text: '<i class="fas fa-print"></i> Print',
+                    titleAttr: 'Print'
                 }  
-            },
-            {
-                extend:    'pdfHtml5',
-                        text:      'PDF',
-                        title:'Titulo de tabla en pdf',
-                        titleAttr: 'PDF',
-                        className: 'btn btn-app export pdf',
-                        exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4 , 5, 6, 7, 8]
-            }
-        },
-        
-        {
-            extend:    'excelHtml5',
-            text:      'Excel',
-            title:'Reporte',
-            titleAttr: 'Excel',
-            className: 'btn btn-app export excel',
-            exportOptions: {
-                columns: [ 0, 1, 2, 3, 4 , 5, 6, 7, 8]
-            },
-        },
-    {
-            extend:    'csvHtml5',
-                        text:      'CSV',
-                        title:'TReporte',
-                        titleAttr: 'CSV',
-                        className: 'btn btn-app export csv',
-                        exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4 , 5, 6, 7, 8]
-        }
-    },
-    {
-        extend:    'print',
-        text:      'Imprimir',
-        title:'Reporte',
-        titleAttr: 'Imprimir',
-        className: 'btn btn-app export imprimir',
-        exportOptions: {
-            columns: [ 0, 1 ]
-        }
-    },],
+],
  });
+ table.buttons().container().appendTo($('#printbar'));
+
     }
       });
       return false;
