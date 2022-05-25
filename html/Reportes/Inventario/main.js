@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
     LoadAllSecuritySeals()
-    //LoadAllSecuritySealsDetail()
+    LoadAllSecuritySealsDetail()
 })
 
 function LoadAllSecuritySeals() {
@@ -15,6 +15,18 @@ function LoadAllSecuritySeals() {
         $('#tbSeals').DataTable({
           pagingType: 'full_numbers',
           data: e.r,
+          columnDefs: [
+            {
+                target: 0,
+                visible: false,
+                searchable: false,
+            },
+            {
+                target: 5,
+                visible: false,
+                searchable: false,
+            },
+        ],
 
           columns: [
             { title: "Sello ID" },
