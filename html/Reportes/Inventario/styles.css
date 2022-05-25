@@ -93,7 +93,18 @@ i{
 }
 
 .imprimir {
-    background-color: #9fa09f !important;
+    background-color: #9fa09f !important; 
 }
+
+.dataTables_filter {
+ position:absolute;
+      top: -1px;
+      left: 350px;
+  
+}
+
+
+
+
 
 
