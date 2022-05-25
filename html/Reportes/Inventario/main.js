@@ -10,11 +10,13 @@ function LoadAllSecuritySeals() {
         action: 'LoadAllSecuritySeals'
       }, function (e) {
         if (!e.error) {
-          console.log(e.r);
 
         $('#tbSeals').DataTable({
           pagingType: 'full_numbers',
           data: e.r,
+          lengthChange: false,
+          dom: 'Bfrtip',
+          
           columnDefs: [
             {
                 target: 0,
@@ -38,7 +40,10 @@ function LoadAllSecuritySeals() {
 	        { title: "Referencia/Viaje" },
 	        { title: "Status" },
             { title: "Fecha Recibido" }
-        ]
+        ],
+        buttons: [ 'copy', 'csv', 'excel', 'pdf', 'print' ],
+
+        
         
         });
             
