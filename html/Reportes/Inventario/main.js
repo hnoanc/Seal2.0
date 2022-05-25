@@ -44,8 +44,8 @@ function LoadAllSecuritySeals() {
         buttons: [ 
             {
                 extend:    'copyHtml5',
-                text:      '<i class="fa fa-clipboard"></i>Copiar',
-                title:'Titulo de tabla copiada',
+                text:      'Copiar',
+                title:'Reporte',
                 titleAttr: 'Copiar',
                 className: 'btn btn-app export barras',
                 exportOptions: {
@@ -54,7 +54,7 @@ function LoadAllSecuritySeals() {
             },
             {
                 extend:    'pdfHtml5',
-                        text:      '<i class="fa fa-file-pdf-o"></i>PDF',
+                        text:      'PDF',
                         title:'Titulo de tabla en pdf',
                         titleAttr: 'PDF',
                         className: 'btn btn-app export pdf',
@@ -65,19 +65,18 @@ function LoadAllSecuritySeals() {
         
         {
             extend:    'excelHtml5',
-            text:      '<i class="fa fa-file-excel-o"></i>Excel',
-            title:'Titulo de tabla en excel',
+            text:      'Excel',
+            title:'Reporte',
             titleAttr: 'Excel',
             className: 'btn btn-app export excel',
             exportOptions: {
                 columns: [ 0, 1, 2, 3, 4 , 5, 6, 7, 8]
             },
         },
-
-        {
+    {
             extend:    'csvHtml5',
-                        text:      '<i class="fa fa-file-text-o"></i>CSV',
-                        title:'Titulo de tabla en CSV',
+                        text:      'CSV',
+                        title:'TReporte',
                         titleAttr: 'CSV',
                         className: 'btn btn-app export csv',
                         exportOptions: {
@@ -86,8 +85,8 @@ function LoadAllSecuritySeals() {
     },
     {
         extend:    'print',
-        text:      '<i class="fa fa-print"></i>Imprimir',
-        title:'Titulo de tabla en impresion',
+        text:      'Imprimir',
+        title:'Reporte',
         titleAttr: 'Imprimir',
         className: 'btn btn-app export imprimir',
         exportOptions: {
@@ -95,8 +94,7 @@ function LoadAllSecuritySeals() {
         }
     },],
  });
-            
-        }
+    }
       });
       return false;
   }
