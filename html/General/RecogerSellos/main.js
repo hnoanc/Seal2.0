@@ -44,8 +44,7 @@ function LoadSecuritySeals() {
           { title: "Proveedor" },
           { title: "Requisicion" },
           { title: "Viaje" },
-          { title: "Status" },
-          { title: "Fecha Recibido" }
+          { title: "Status" }
       ]
       
       });

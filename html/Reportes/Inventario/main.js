@@ -15,8 +15,8 @@ function LoadAllSecuritySeals() {
           pagingType: 'full_numbers',
           data: e.r,
           lengthChange: false,
+          LengthMenu:[5, 50, 75, 100],
           dom: 'Bfrtip',
-          
           columnDefs: [
             {
                 target: 0,
@@ -69,7 +69,7 @@ function LoadAllSecuritySeals() {
                 }  
 ],
  });
- table.buttons().container().appendTo($('#printbar'));
+
 
     }
       });

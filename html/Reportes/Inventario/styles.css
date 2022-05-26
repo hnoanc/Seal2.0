@@ -98,8 +98,8 @@ i{
 
 .dataTables_filter {
  position:absolute;
-      top: -1px;
-      left: 350px;
+      top: -7px;
+      right: 15px;
   
 }
 
