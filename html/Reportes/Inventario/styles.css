@@ -15,7 +15,7 @@ table {
     color: white;
   }
 
-/*  
+/*  degradado de body
   body {
     background: #e8cbc0;
     background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
@@ -96,19 +96,17 @@ i{
     background-color: #9fa09f !important; 
 }
 
-.dataTables_filter {
+.dataTables_filter { /*filter search*/
  position:absolute;
       top: -7px;
       right: 15px;
   
 }
-
-
-
-select.form-control{
+select.form-control{ /*show entries*/
   position: absolute !important;
   top: -2px !important; 
   left: 340px !important;
+  
 }
 
 div.dataTables_wrapper div.dataTables_length label{
