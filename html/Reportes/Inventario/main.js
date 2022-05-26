@@ -14,8 +14,7 @@ function LoadAllSecuritySeals() {
         $('#tbSeals').DataTable({
           pagingType: 'full_numbers',
           data: e.r,
-          lengthChange: false,
-          dom: 'Bfrtip',
+          dom: 'Blfrtip',
           columnDefs: [
             {
                 target: 0,
@@ -39,10 +38,6 @@ function LoadAllSecuritySeals() {
 	        { title: "Referencia/Viaje" },
 	        { title: "Status" },
             { title: "Fecha Recibido" }
-        ],
-        lengthMenu: [
-            [5, 10, 25, -1],
-            ['5 Filas', '10 Filas', '25 Filas', '50 Filas', '100 Filas']
         ],
         buttons: [ 
                 {
@@ -69,7 +64,7 @@ function LoadAllSecuritySeals() {
                     extend: 'print',
                     text: '<i class="fas fa-print"></i> Print',
                     titleAttr: 'Print'
-                }  ,'pageLength'
+                }  
 ],
  });
 
