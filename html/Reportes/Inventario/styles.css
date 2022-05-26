@@ -105,13 +105,17 @@ i{
 
 
 
-/*select.form-control{
+select.form-control{
   position: absolute !important;
   top: -2px !important; 
   left: 340px !important;
 }
 
-*/
+div.dataTables_wrapper div.dataTables_length label{
+  color: white;
+}
+
+
 
 
 

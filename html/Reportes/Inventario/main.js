@@ -14,8 +14,7 @@ function LoadAllSecuritySeals() {
         $('#tbSeals').DataTable({
           pagingType: 'full_numbers',
           data: e.r,
-          lengthChange: false,
-          dom: 'Bfrtip',
+          dom: 'Blfrtip',
           columnDefs: [
             {
                 target: 0,
@@ -65,7 +64,7 @@ function LoadAllSecuritySeals() {
                     extend: 'print',
                     text: '<i class="fas fa-print"></i> Print',
                     titleAttr: 'Print'
-                } 
+                }  ,
 ],
  });
 
