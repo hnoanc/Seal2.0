@@ -15,7 +15,6 @@ function LoadAllSecuritySeals() {
           pagingType: 'full_numbers',
           data: e.r,
           lengthChange: false,
-          LengthMenu:[5, 50, 75, 100],
           dom: 'Bfrtip',
           columnDefs: [
             {
@@ -40,6 +39,10 @@ function LoadAllSecuritySeals() {
 	        { title: "Referencia/Viaje" },
 	        { title: "Status" },
             { title: "Fecha Recibido" }
+        ],
+        lengthMenu: [
+            [5, 10, 25, -1],
+            ['5 Filas', '10 Filas', '25 Filas', '50 Filas', '100 Filas']
         ],
         buttons: [ 
                 {
@@ -66,7 +69,7 @@ function LoadAllSecuritySeals() {
                     extend: 'print',
                     text: '<i class="fas fa-print"></i> Print',
                     titleAttr: 'Print'
-                }  
+                }  ,'pageLength'
 ],
  });
 
