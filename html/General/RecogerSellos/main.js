@@ -7,6 +7,10 @@ $(document).ready(function () {
     $('select').select2({
       width: "100%"
     });
+
+    $('#Logout').click(function () {
+      CloseSession()
+      });
 })
 
 function GetUsersForReceiveFromSecurity() {
@@ -25,14 +29,11 @@ function GetUsersForReceiveFromSecurity() {
 }
 
 function LoadSecuritySeals() {
-
-    
   $.post('main.php', {
       action: 'LoadSecuritySeals'
     }, function (e) {
       if (!e.error) {
-        console.log(e.r);
-
+        console.log(e)
       $('#tbSeals').DataTable({
         pagingType: 'full_numbers',
         data: e.r,
