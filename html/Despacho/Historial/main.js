@@ -5,6 +5,10 @@ $(document).ready(function(){
     /*GetUserInfo();
     GetDepartments();
   /*  GetRoles();*/
+
+  $('#Logout').click(function () {
+    CloseSession()
+    });
 })
 
 function LoadSecuritySeals() {

@@ -5,6 +5,10 @@ $(document).ready(function () {
     GetUsersForReceiveSeals();
     LoadSecuritySeals();
     $('select').select2(); 
+
+    $('#Logout').click(function () {
+      CloseSession()
+      });
 })
 
 function GetUsersForReceiveSeals() {

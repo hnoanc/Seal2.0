@@ -7,7 +7,6 @@ if(isset($_POST['action'])){
 		case 'GetUsersForReceiveFromSecurity':
 		echo $obj-> GetUsersForReceiveFromSecurity();
 		break;
-
 		case 'LoadSecuritySeals':
 			echo $obj->LoadSecuritySeals();
 	}

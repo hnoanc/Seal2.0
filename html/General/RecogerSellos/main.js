@@ -8,9 +8,9 @@ $(document).ready(function () {
       width: "100%"
     });
 
-    $('#Logout').click(function () {
+ /*   $('#Logout').click(function () {
       CloseSession()
-      });
+      });*/
 })
 
 function GetUsersForReceiveFromSecurity() {
@@ -47,13 +47,8 @@ function LoadSecuritySeals() {
           { title: "Viaje" },
           { title: "Status" }
       ]
-      
-      });
-          
-      }
     });
-    return false;
-
-  
-
+  }
+ });
+return false;
 }
