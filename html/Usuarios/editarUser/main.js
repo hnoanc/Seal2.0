@@ -1,4 +1,6 @@
 var editor; 
+var td = document.getElementById("tbUser").rows[0].cells[0].innerText;
+console.log(td);
 
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
@@ -6,6 +8,10 @@ $(document).ready(function(){
     LoadUsersInfo();
     GetUserInfo();
     GetDepartments();
+
+    $('#Logout').click(function () {
+      CloseSession()
+      });
   /*  GetRoles();*/
    
 
@@ -16,6 +22,15 @@ $(document).ready(function(){
 })
 
 function LoadUsersInfo() {
+
+  var table = document.getElementById("tbUser");
+for (let i in table.rows) {
+   let row = table.rows[i]
+
+   for (let j in row.cells) {
+     let col = row.cells[j]
+   }
+  }
   
   $.post('main.php', {
       action: 'LoadUsersInfo'
@@ -28,7 +43,7 @@ function LoadUsersInfo() {
         data: e.r,
 
         columns: [
-          { name: "ID",title: "ID"},
+          { name: "id",title: "ID"},
           { title: "Nombre"},
           { title: "Rol"},
           { title: "Departamento"},
@@ -38,21 +53,17 @@ function LoadUsersInfo() {
           {title: "Estado"},
           {"data": null,
           "className": "button",
-          "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo()" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}
-      
-         ,
-        ]         
-                                                                                 /*onclick="GetUserInfo('+e.r[i][0]+')"*/ 
-                 
-      }); 
-
-
-      }
-    });
+          "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo(+e.r[i][0]+)" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}
+         
+         , 
+          
+        ]              
+                                                              
+      });
+    }
+  });
     return false;
 }
-
-
 
 function GetUserInfo(id) {
 
@@ -65,7 +76,7 @@ function GetUserInfo(id) {
     Data: Data
   }, function (e) {
     if (!e.error) {
-      $('#UserIDPass').val(e.r[0][0]);
+      $('#UserIDPass').val([0][0]);
       $('#UserPass').val(e.r[0][1]);
       $('#CB_Roll').val(e.r[0][2]);
       $('#CB_Roll').trigger('change');

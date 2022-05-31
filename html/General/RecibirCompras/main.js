@@ -6,6 +6,10 @@ $(document).ready(function () {
     $('select').select2({
       width: "100%"
     });
+
+    $('#Logout').click(function () {
+      CloseSession()
+      });
     
 
     $('#btnGuardar').click(function () {

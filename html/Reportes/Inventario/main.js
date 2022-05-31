@@ -3,6 +3,10 @@ $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
     LoadAllSecuritySeals()
     LoadAllSecuritySealsDetail()
+
+    $('#Logout').click(function () {
+      CloseSession()
+      });
 })
 
 function LoadAllSecuritySeals() {

@@ -25,3 +25,11 @@ table {
 .btn.dropdown-toggle:focus {
     outline: none !important;
 }
+
+#btnSuc{
+  position: relative !important;
+  left: 590px !important;
+  top: -10px !important;
+  width: 350px !important;
+  text-align: center !important;
+}
