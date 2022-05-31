@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
    // $(function(){ $("foot").load("../../foot.html") });
     GetUsersForReceiveSeals();
-    LoadSecuritySeals();
+    LoadSealsDepartment();
     $('select').select2(); 
 })
 
@@ -24,8 +24,6 @@ function GetUsersForReceiveSeals() {
 }
 
 function LoadSecuritySeals() {
-
-    
     $.post('main.php', {
         action: 'LoadSecuritySeals'
       }, function (e) {
@@ -45,13 +43,33 @@ function LoadSecuritySeals() {
             { title: "Status" },
             { title: "Fecha adquisicion" }
         ]
-        
         });
-            
         }
       });
       return false;
+}
 
-    
+function LoadSealsDepartment() {
+  $.post('main.php', {
+      action: 'LoadSealsDepartment'
+      
+    }, function (e) {
+      if (!e.error) {
+        console.log(e.r);
 
+      $('#tbSeals').DataTable({
+        pagingType: 'full_numbers',
+        data: e.r,
+
+        columns: [
+          { title: "Id_StatusSeal" },
+          { title: "ID_Seal" },
+          { title: "Sello" },
+          { title: "Estatus." },
+          { title: "Fecha" }
+      ]
+      });
+      }
+    });
+    return false;
 }

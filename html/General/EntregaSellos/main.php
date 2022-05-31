@@ -10,6 +10,11 @@ if(isset($_POST['action'])){
         case 'LoadSecuritySeals':
             echo $obj->LoadSecuritySeals();
             break;
+		
+		case 'LoadSealsDepartment':
+			echo $obj->LoadSealsDepartment();
+			break;
+
 		default:
 		echo "Opción Inválida";
 		break;

@@ -53,7 +53,4 @@ function LoadSecuritySeals() {
       }
     });
     return false;
-
-  
-
 }

@@ -34,6 +34,16 @@ class Admin extends Anonymous
     return json_encode($retval);
   }
 
+  function LoadSealsDepartment(){
+    session_start();
+    $cnx=$this->connectSqlSrv();
+    $sth=$cnx->prepare("sp_LoadSealsDepartment ?,?");
+    $sth->bindParam(1, $_SESSION['SESSINFOSEAL']['User_Usr']);
+    $sth->bindParam(2, $_SESSION['SESSINFOSEAL']['Ofice_ID']);
+    $retval=$this->ExecuteSelectArray($sth);
+    return json_encode($retval);
+  }
+
   function AddSealsFromPurchase($Data){
     session_start();
     $cnx=$this->connectSqlSrv();
