@@ -1,6 +1,3 @@
-var editor; 
-var td = document.getElementById("tbUser").rows[0].cells[0].innerText;
-console.log(td);
 
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
@@ -12,26 +9,12 @@ $(document).ready(function(){
     $('#Logout').click(function () {
       CloseSession()
       });
-  /*  GetRoles();*/
-   
 
-
- /* $('select').select({
-         with:"100%"
-     });   */
 })
 
 function LoadUsersInfo() {
 
   var table = document.getElementById("tbUser");
-for (let i in table.rows) {
-   let row = table.rows[i]
-
-   for (let j in row.cells) {
-     let col = row.cells[j]
-   }
-  }
-  
   $.post('main.php', {
       action: 'LoadUsersInfo'
     }, function (e) {
