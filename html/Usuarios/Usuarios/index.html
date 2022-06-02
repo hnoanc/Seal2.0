@@ -10,11 +10,7 @@
     <link rel="stylesheet" href="../../../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.12.0/datatables.min.css"/>
     <link rel="stylesheet" href="../../../assets/css/select2.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-
-    
-    
     <title>SEAL</title>
 </head>
 
@@ -113,33 +109,41 @@
                       </div>
 
                       <div id="regis" class="container tab-pane fade">
-                        <form>
-                          <div class="form-group">
-                            <label for="InputName">Full Name</label>
-                            <input type="text" class="form-control is-valid" id="InputName" placeholder="Full Name">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="InputUsername">Username</label>
-                            <input type="text" class="form-control is-valid" id="InputUsername" placeholder="Username">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlInput2">Email address</label>
-                            <input type="email" class="form-control is-valid" id="exampleFormControlInput2" placeholder="name@example.com">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword2">Password</label>
-                            <input type="password" class="form-control is-invalid" id="exampleInputPassword2" placeholder="Password">
-                            <small id="emailHelp" class="form-text text-muted">Password incorrect.</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPasswordVer">Verify Password</label>
-                            <input type="password" class="form-control is-invalid" id="exampleInputPasswordVer" placeholder="Password">
-                          </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                        <form >
+                         <div class="row" id="dvCont">
+                             <div id="dvEmail" class="form-group col-md-5">
+                                 <select class="form-control" id="cbEmail">
+                                 </select>
+                                 <label>Email</label>
+                             </div>
+                             <div id="dvEmail2" class="form-group floating-label col-md-5 hidden">
+                                 <input type="text" class="form-control dirty" id="txtEmail">
+                                 <label>Email</label>
+                             </div>
+                             <p class="col-md-1" id="Pemail">
+                                 <button id="btnEditEmail" type="button" class="btn ink-reaction btn-lg btn-icon-toggle btn-primary">
+                                     <i class="fas fa-edit" id="btnIconEd"></i>
+                                 </button>
+                             </p>
+                             <div id="dvUser" class="form-group floating-label col-md-6">
+                                 <select id="cbUser" name="cbUser" class="form-control dirty">
+                                 </select>
+                                 <label form="cbUser" class="help-block hidden">Este campo es reqiosito</label>
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class="form-group floating-label col-md-5">
+                                 <input type="text" class="form-control dirty" id="txtPass">
+                                 <label>Contraseña</label>
+                             </div>
+                             <div class="form-group floating-label col-md-7">
+                                 <textarea class="form-control dirty" cols="4" rows="1" id="txtDesp" maxlength="150">
+                                 </textarea>
+                                 <label>Descripcion</label>
+                             </div>
+                         </div>
                         </form>
+
                       </div>
                     </div>
                   </div> 
@@ -150,22 +154,21 @@
 
 
 
-    <!-- Optional JavaScript -->
-    <script src="../../../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <!-- bootstap bundle js -->
-    <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <!-- slimscroll js -->
+<script src="../../../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<!-- bootstap bundle js -->
+<script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<!-- slimscroll js -->
 
 
-    <script src="../../../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <!-- main js -->
-    <script src="../../../assets/libs/js/main-js.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!--<script src="../../../assets/js/libs/DataTables/jquery.dataTables.min.js"></script>-->
-    <!--<script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap4.min.js"></script>-->
-    <script src="../../../assets/js/select2.min.js"></script>
-    <script src="main.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.12.0/datatables.min.js"></script>
+<script src="../../../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<!-- main js -->
+<script src="../../../assets/libs/js/main-js.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script src="../../../assets/js/libs/DataTables/jquery.dataTables.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap4.min.js"></script>-->
+<script src="../../../assets/js/select2.min.js"></script>
+<script src="main.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.12.0/datatables.min.js"></script>
 
 </body>
 
