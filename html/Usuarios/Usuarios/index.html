@@ -84,7 +84,10 @@
                         <a class="nav-link active" data-toggle="pill" href="#login">Consulta</a>
                       </li>
                       <li class="nav-item" id="liTabR">
-                        <a class="nav-link" data-toggle="pill" href="#regis">Register</a>
+                        <a class="nav-link" data-toggle="pill" href="#regis">Editar</a>
+                      </li>
+                      <li class="nav-item" id="liTabAr">
+                        <a class="nav-link" data-toggle="pill" href="#agre">Agregar</a>
                       </li>
                     </ul>
                 
@@ -108,7 +111,7 @@
                         </form>
                       </div>
 
-                      <div id="regis" class="container tab-pane fade">
+                      <div id="regis" class="container tab-pane fade"> <!--TAB DE EDITAR-->
                         <form >
                          <div class="row" id="dvCont">
                              <div id="dvEmail" class="form-group col-md-5">
@@ -118,32 +121,54 @@
                              </div>
                              <div id="dvEmail2" class="form-group floating-label col-md-5 hidden">
                                  <input type="text" class="form-control dirty" id="txtEmail">
-                                 <label>Email</label>
-                             </div>
-                             <p class="col-md-1" id="Pemail">
-                                 <button id="btnEditEmail" type="button" class="btn ink-reaction btn-lg btn-icon-toggle btn-primary">
-                                     <i class="fas fa-edit" id="btnIconEd"></i>
-                                 </button>
-                             </p>
-                             <div id="dvUser" class="form-group floating-label col-md-6">
-                                 <select id="cbUser" name="cbUser" class="form-control dirty">
-                                 </select>
-                                 <label form="cbUser" class="help-block hidden">Este campo es reqiosito</label>
+                                 <label>Usuario</label>
                              </div>
                          </div>
                          <div class="row">
-                             <div class="form-group floating-label col-md-5">
-                                 <input type="text" class="form-control dirty" id="txtPass">
-                                 <label>Contraseña</label>
+                             <div id="divPass" class="form-group floating-label col-md-5">
+                                <textarea class="form-control dirty" cols="4" rows="1" id="txtDesp" maxlength="150">
+                                </textarea>
+                                <label>Descripcion</label>
                              </div>
-                             <div class="form-group floating-label col-md-7">
-                                 <textarea class="form-control dirty" cols="4" rows="1" id="txtDesp" maxlength="150">
-                                 </textarea>
-                                 <label>Descripcion</label>
+                             <div class="form-group floating-label col-md-5" id="dvDesp">
+                                <input type="text" class="form-control dirty" id="txtPass">
+                                <label>Contraseña</label>
                              </div>
                          </div>
+                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                            <button class="btn btn-primary" type="submit" id="btnUsr">Guardar e imprimir formato</button>
+                        </div>
                         </form>
+                      </div>
 
+                       <div id="agre" class="container tab-pane fade"> <!--TAB DE AÑADIR-->
+                        <form >
+                         <div class="row" id="dvCont">
+                             <div id="dvEmail" class="form-group col-md-5">
+                                 <select class="form-control" id="cbEmail">
+                                 </select>
+                                 <label>Email</label>
+                             </div>
+                             <div id="dvEmail2" class="form-group floating-label col-md-5 hidden">
+                                 <input type="text" class="form-control dirty" id="txtEmail">
+                                 <label>Usuario</label>
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div id="divPass" class="form-group floating-label col-md-5">
+                                <textarea class="form-control dirty" cols="4" rows="1" id="txtDesp" maxlength="150">
+                                </textarea>
+                                <label>Descripcion</label>
+                             </div>
+                             <div class="form-group floating-label col-md-5" id="dvDesp">
+                                <input type="text" class="form-control dirty" id="txtPass">
+                                <label>Contraseña</label>
+                             </div>
+                         </div>
+                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                            <button class="btn btn-primary" type="submit" id="btnUsr">Guardar e imprimir formato</button>
+                        </div>
+                        </form>
                       </div>
                     </div>
                   </div> 

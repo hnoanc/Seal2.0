@@ -19,8 +19,8 @@
   }
   .tab-content{
     position: absolute;
-    width: 1260px;
-    height: 500px;
+    width: 1330px;
+    height: 600px;
     margin-top: 20px;
     background: #fff;
     color: #000;
@@ -28,31 +28,41 @@
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
     padding: 30px;
     margin-bottom: 50px;
-    left: 250px;
+    left: 160px;
   }
-  .tab-content button{
-    border-radius: 15px;
-    width: 100px;
-    margin: 0 auto;
-    float: right;
-  }
+
+
+
 
   #tabU{
       position: absolute !important;
-      left: 145px !important;
-      top: 250px !important
+      left: 50px !important;
+      top: 300px !important
     }
   
 
   #liTabU{
       -webkit-transform: rotate(270deg) !important;
+      position: absolute !important;
+      top: -54px !important;
+      left: 32px !important;
+      width: 165px !important;
   }
   
   #liTabR{
     -webkit-transform: rotate(270deg) !important;
     position: absolute !important;
-    left: 0px !important;
-    top: 175px !important;
+    left: 35px !important;
+    top: 60px !important;
+    width: 35% !important;
+  }
+
+  #liTabAr{
+    -webkit-transform: rotate(270deg) !important;
+    position: absolute !important;
+    left: 35px !important;
+    top: 190px !important;
+    width: 35% !important;
   }
 
   table.dataTable {
@@ -63,9 +73,9 @@
     border-collapse: separate !important;
   }
 
-  #Pemail{
+ /* #Pemail{
       right: 500px !important;
-  }
+  }*/
   .tab-content button {
     border-radius: 43px;
     width: 58px;
@@ -73,10 +83,50 @@
     float: right;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2}
+
+  th {
+    background-color: #4adbd4;
+    color: white;
+  }
+
+  #dvEmail{
+    position: absolute !important;
+    top: 150px !important;
+  }
+
 #dvEmail2{
-    left: 150px !important
+    position: absolute !important;
+    top: 150px !important;
+    right: 90px;
 }
 
-#dvCont{
+#divPass{
+    position: absolute !important;
+    top: 320px !important;
+    right: 90px;
+}
+
+#dvDesp{
+    position: absolute !important;
+    top: 320px !important;
+}
+
+#btnUsr{
+    position: relative !important;
+    top: 450px !important;
+    float: none !important;
+    border-radius: inherit !important;
+    width: 350px !important;
     
 }
