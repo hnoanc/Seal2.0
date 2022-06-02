@@ -27,7 +27,7 @@
   .tab-content{
     position: absolute;
     width: 1260px;
-    height: auto;
+    height: 500px;
     margin-top: 20px;
     background: #fff;
     color: #000;
@@ -45,17 +45,14 @@
   }
 
   #tabU{
-     
       position: absolute !important;
       left: 145px !important;
       top: 250px !important
-
     }
   
 
   #liTabU{
-   
-    -webkit-transform: rotate(270deg) !important;
+      -webkit-transform: rotate(270deg) !important;
   }
   
   #liTabR{
@@ -63,4 +60,12 @@
     position: absolute !important;
     left: 0px !important;
     top: 175px !important;
+  }
+
+  table.dataTable {
+    clear: both;
+    margin-top: 64px !important;
+    margin-bottom: 78px !important;
+    max-width: none !important;
+    border-collapse: separate !important;
   }
