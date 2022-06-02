@@ -56,7 +56,7 @@ function LoadSecuritySeals() {
 function LoadSealsDepartment() {
   $.post('main.php', {
       action: 'LoadSealsDepartment'
-      
+
     }, function (e) {
       if (!e.error) {
         console.log(e.r);
@@ -64,12 +64,13 @@ function LoadSealsDepartment() {
       $('#tbSeals').DataTable({
         pagingType: 'full_numbers',
         data: e.r,
+        order: [[3, 'desc']],
 
         columns: [
-          { title: "Id_StatusSeal" },
-          { title: "ID_Seal" },
-          { title: "Sello" },
-          { title: "Estatus." },
+          { title: "Id_StatusSeal", visible: false },
+          { title: "ID Sello" },
+          { title: "Numero de Sello" },
+          { title: "Estatus" },
           { title: "Fecha" }
       ]
       });
