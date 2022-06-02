@@ -78,3 +78,74 @@ function LoadSealsDepartment() {
     });
     return false;
 }
+
+function UpdateSealToSecurity() {
+
+  var data = {
+      'InitialFolio_ID': $('#txtFolioInicial').val(),
+      'FinalFolio_ID': $('#txtFolioFinal').val(),
+      'UserReceive': $('#cbxUser').val()
+  };
+
+  if (Validar()) {
+      $.post('main.php', {
+          action: 'UpdateSealToSecurity',
+          Data: data
+      }, function(e) {
+          if (!e.error) {
+              window.open('pdf.php?User=' + $('#cbxUser').val() + '&Type=R&InitialFolio=' + $('#txtFolioInicial').val() + '&FinalFolio=' + $('#txtFolioFinal').val() + '&UserR', '_blank');
+              LoadSecuritySeals();
+              clear();
+          }
+      });
+  }
+}
+
+function Validar(data){
+
+  let x = false;
+
+  for (let i = 0; i < data.length; i++) {
+    const element = data[i];
+    if (element != "" || element != null) {
+      x = true;
+    }else{
+      i = data.length;
+      x = false;
+    }
+  }
+  return x;
+
+}
+
+
+
+
+// var data = {
+//   'InitialFolio': $('#txtFolioInicial').val(),
+//   'FinalFolio': $('#txtFolioFinal').val(),
+//   'UserDelivery': $('#cbxUser').val(),
+//   'Color': $('#txtColor').val(),
+//   'Supplier_ID': $('#cbxProveedor').val(),
+//   'Requisition_ID': 0,
+//   'Reference': $('#txtReferencia').val(),
+//   'Status': 1,
+//   'Quantity': $('#txtCantidad').val()
+// };
+
+//   $.post('main.php', {
+//     action: 'AddNewSeals',
+//     Data: data
+//   }, function (e) {
+//     if (!e.error) {
+//       const div = document.getElementById("divAlert");
+//       document.getElementById("alertMessage").textContent="Guardado correctamente";
+//       div.style.backgroundColor = "#6ab150"
+//       window.open('pdf.php?User=' + $('#cbxUser').val() + '&Type=R&InitialFolio=' + $('#txtFolioInicial').val() +'&FinalFolio='+$('#txtFolioFinal').val() +'&UserR', '_blank');
+//       limpiar()
+    
+//     }else{
+//       document.getElementById("alertMessage").textContent="Ha fallado correctamente";
+//       div.style.backgroundColor = "#f86f6f"
+//     }
+//   });

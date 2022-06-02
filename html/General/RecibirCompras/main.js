@@ -34,15 +34,6 @@ $(document).ready(function () {
 })
 
 function AddSealsFromPurchase() {
-  
-  /*var objects = [
-    ['#CB_User', '#FG_User', '#CB_UserE'],
-    ['#Txt_Quantity', '#FG_Quantity', '#Txt_QuantityE'],
-    ['#Txt_InitialFolio', '#FG_InitialFolio', '#Txt_InitialFolioE'],
-    ['#Txt_FinalFolio', '#FG_FinalFolio', '#Txt_FinalFolioE'],
-    ['#CB_Supplier', '#FG_Supplier', '#CB_SupplierE']
-    
-  ];*/
 
     var data = {
       'InitialFolio': $('#txtFolioInicial').val(),
