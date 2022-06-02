@@ -15,6 +15,10 @@ if(isset($_POST['action'])){
 			echo $obj->LoadSealsDepartment();
 			break;
 
+		case 'UpdateSealToSecurity':
+			echo $obj->UpdateSealToSecurity($_POST['Data']);
+			break;
+			
 		default:
 		echo "Opción Inválida";
 		break;
