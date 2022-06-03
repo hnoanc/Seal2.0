@@ -39,7 +39,6 @@
       left: 50px !important;
       top: 300px !important
     }
-  
 
   #liTabU{
       -webkit-transform: rotate(270deg) !important;
@@ -48,7 +47,6 @@
       left: 32px !important;
       width: 165px !important;
   }
-  
   #liTabR{
     -webkit-transform: rotate(270deg) !important;
     position: absolute !important;
@@ -56,22 +54,15 @@
     top: 60px !important;
     width: 35% !important;
   }
-
   #liTabAr{
     -webkit-transform: rotate(270deg) !important;
     position: absolute !important;
     left: 35px !important;
-    top: 190px !important;
+    top: 162px !important;
     width: 35% !important;
   }
 
-  table.dataTable {
-    clear: both;
-    margin-top: 64px !important;
-    margin-bottom: 78px !important;
-    max-width: none !important;
-    border-collapse: separate !important;
-  }
+
 
  /* #Pemail{
       right: 500px !important;
@@ -82,6 +73,14 @@
     margin: 0 auto;
     float: right;
 }
+
+table.dataTable {
+    clear: both;
+    margin-top: 37px !important;
+    margin-bottom: 78px !important;
+    max-width: none !important;
+    border-collapse: separate !important;
+  }
 
 table {
     border-collapse: collapse;

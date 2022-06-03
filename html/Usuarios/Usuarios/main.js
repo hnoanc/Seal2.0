@@ -21,7 +21,10 @@ function LoadUsersInfo(){
                     {title: "Departamento"},
                     {title: "Correo"},
                     {title: "Extencion"},
-                    {title: "Oficina"}
+                    {title: "Oficina"},
+                    {"data": null,
+                "className": "button",
+                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo(+e.r[i][0]+)" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}
                 ]
             });
         }

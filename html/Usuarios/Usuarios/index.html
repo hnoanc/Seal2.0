@@ -104,14 +104,13 @@
                                 <th>Corre</th>
                                 <th>Extencion</th>
                                 <th>Oficina</th>
-                                <th>Estado</th>
                                 <th>Editar</th>
                             </thead>
                         </table>
                         </form>
                       </div>
-
-                      <div id="regis" class="container tab-pane fade"> <!--TAB DE EDITAR-->
+                              <!--TAB DE EDITAR-->
+                <!---      <div id="regis" class="container tab-pane fade"> 
                         <form >
                          <div class="row" id="dvCont">
                              <div id="dvEmail" class="form-group col-md-5">
@@ -139,7 +138,7 @@
                             <button class="btn btn-primary" type="submit" id="btnUsr">Guardar e imprimir formato</button>
                         </div>
                         </form>
-                      </div>
+                      </div>-->
 
                        <div id="agre" class="container tab-pane fade"> <!--TAB DE AÑADIR-->
                         <form >
@@ -170,6 +169,57 @@
                         </div>
                         </form>
                       </div>
+                    </div>
+                     <!--MODAL EDITAR-->
+                     <div class="modal fade" id="ModUs" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="formModalLabel">Informacion del usuario</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form class="form-horizontal" role="form">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <div class="col-sm-3">
+                                                <label for="UserIDPass" class="control-label">ID</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text"name="UserIDPass" id="UserIDPass" class="form-control" disabled>
+                                                <div class="form-control-line"></div>
+                                            </div>
+                                        </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            <label for="UserPass" class="control-label">Usuario</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="UserPass" id="UserPass" class="form-control" disabled>
+                                            <div class="form-control-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            <label for="CB_Roll" class="control-label">Roll</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <select name="CB_Roll" id="CB_Roll" class="form-control" placeholder="Roll">
+                                                
+                                            </select>
+                                            <div class="form-control-line"></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" id="btnUpdate">Guardar</button>
+                                </div>
+                              </form>
+                            </div>
+                        </div>
                     </div>
                   </div> 
         </div> 
