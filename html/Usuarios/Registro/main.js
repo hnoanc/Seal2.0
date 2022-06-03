@@ -3,9 +3,7 @@ $(document).ready(function(){
     GetUsersForReceiveSeals();
     GetDepartments();
 
- /* $('select').select({
-         with:"100%"
-     });   */
+
 })
 
 function GetUsersForReceiveSeals() {
