@@ -145,15 +145,17 @@
                         <form id="fmAddUser">
                          <div class="row" id="dvCont">
                                
-                                <div id="dvEmail" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                    <label>Usuario</label>
+                                <div id="dvUsers" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                    <label id="lbus">Usuario</label>
                                     <select name="cbxUser" class="form-control form-control-lg" id="cbxUser">
-                                        <option value="" disable selected>Seleccionar usuario</option>
+                                        <option value="" disable selected>Seleccionar Usuario</option>
                                     </select>
                              </div>
-                             <div id="dvEmail2" class="form-group floating-label col-md-5 hidden">
+                             <div id="dvDep" class="form-group floating-label col-md-5 hidden">
                                 <label>Departamento</label>
-                                 <input type="text" class="form-control dirty" id="txtEmail">
+                                <select name="cbDep" class="form-control form-control-lg" id="cbDep">
+                                    <option value="" disable selected>Seleccionar Departamento</option>
+                                </select>
                              </div>
                          </div>
 
@@ -163,6 +165,7 @@
                         </form>
                       </div>
                     </div>
+
                      <!--MODAL EDITAR-->
                      <div class="modal fade" id="ModUs" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog">
