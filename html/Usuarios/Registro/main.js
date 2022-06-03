@@ -26,7 +26,7 @@ function GetUsersForReceiveSeals() {
       action: 'GetDepartments'
     }, function (e) {
       if (!e.error) {
-        var $select = $('#CbDep');
+        var $select = $('#cbDep');
         for (let i = 0; i < e.r.length; i++) {
             $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
         }

@@ -10,6 +10,9 @@ if(isset($_POST['action'])){
       case 'GetUsersForReceiveSeals':
         echo $obj-> GetUsersForReceiveSeals();
         break;
+        case 'GetDepartments':
+          echo $obj-> GetDepartments();
+          break;
     }
 }
 ?>

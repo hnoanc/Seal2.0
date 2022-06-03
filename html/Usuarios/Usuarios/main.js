@@ -1,6 +1,10 @@
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
     LoadUsersInfo();
+    GetDepartments();
+
+
+    
     GetUsersForReceiveSeals();
     $('select').select2(); 
 })
@@ -41,6 +45,21 @@ function GetUsersForReceiveSeals() {
     }, function (e) {
       if (!e.error) {
         var $select = $('#cbxUser');
+        for (let i = 0; i < e.r.length; i++) {
+            $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
+        }
+      }
+      
+    });
+    return false;
+  }
+
+  function GetDepartments() {
+    $.post('main.php', {
+      action: 'GetDepartments'
+    }, function (e) {
+      if (!e.error) {
+        var $select = $('#CbDep');
         for (let i = 0; i < e.r.length; i++) {
             $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
         }
