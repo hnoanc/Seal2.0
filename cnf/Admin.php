@@ -67,12 +67,19 @@ class Admin extends Anonymous
 
   function UpdateSealToSecurity($Data){
     session_start();
+
+    if ($_SESSION['SESSINFOSEAL']['Ofice_ID'] ) {
+      
+    }
+
+
     $cnx=$this->connectSqlSrv();
-    $sth=$cnx->prepare("Exec sp_UpdateSealToSecurity ?,?,?,?");
+    $sth=$cnx->prepare("Exec sp_UpdateSealToDepartment ?,?,?,?,?");
     $sth->bindParam(1, $Data["InitialFolio_ID"]);
     $sth->bindParam(2, $Data["FinalFolio_ID"]);
     $sth->bindParam(3, $_SESSION['SESSINFOSEAL']['User_Usr']);
     $sth->bindParam(4, $Data["UserReceive"]);
+    $sth->bindParam(5, $_SESSION['SESSINFOSEAL']['Ofice_ID']);
     $retval=$this->ExecuteNoQuery($sth);
     session_write_close();
     return json_encode($retval);
