@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
     LoadUsersInfo();
+    GetUsersForReceiveSeals();
 })
 
 function LoadUsersInfo(){
@@ -31,3 +32,19 @@ function LoadUsersInfo(){
     });
     return
 }
+
+
+function GetUsersForReceiveSeals() {
+    $.post('main.php', {
+      action: 'GetUsersForReceiveSeals'
+    }, function (e) {
+      if (!e.error) {
+        var $select = $('#cbxUser');
+        for (let i = 0; i < e.r.length; i++) {
+            $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
+        }
+      }
+      
+    });
+    return false;
+  }

@@ -20,7 +20,7 @@
   .tab-content{
     position: absolute;
     width: 1330px;
-    height: 600px;
+    height: auto !important;
     margin-top: 20px;
     background: #fff;
     color: #000;
@@ -43,23 +43,27 @@
   #liTabU{
       -webkit-transform: rotate(270deg) !important;
       position: absolute !important;
-      top: -54px !important;
-      left: 32px !important;
-      width: 165px !important;
+      top: -1px !important;
+      left: 15px !important;
+      width: 200px !important;
+  }
+
+  #liTabU:target{
+     background-color: red !important;
   }
   #liTabR{
     -webkit-transform: rotate(270deg) !important;
     position: absolute !important;
     left: 35px !important;
     top: 60px !important;
-    width: 35% !important;
+    width: 200px !important;
   }
   #liTabAr{
     -webkit-transform: rotate(270deg) !important;
     position: absolute !important;
-    left: 35px !important;
-    top: 162px !important;
-    width: 35% !important;
+    left: 15px !important;
+    top: 154px !important;
+    width: 200px !important;
   }
 
 
@@ -123,9 +127,14 @@ table {
 
 #btnUsr{
     position: relative !important;
-    top: 450px !important;
+    top: 400px !important;
     float: none !important;
     border-radius: inherit !important;
     width: 350px !important;
     
+}
+
+#fmAddUser{
+    width: 1152px !important;
+    height: 465px !important;
 }
