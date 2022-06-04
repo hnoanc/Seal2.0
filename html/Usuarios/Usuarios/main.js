@@ -10,7 +10,7 @@ $(document).ready(function(){
 })
 
 function LoadUsersInfo(){
-    var table = document.getElementById("tbUser");
+  
     $.post('main.php', {
         action: 'LoadUsersInfo'
     }, function (e){
@@ -27,11 +27,11 @@ function LoadUsersInfo(){
                     {title: "Departamento"},
                     {title: "Correo"},
                     {title: "Extencion"},
-                    {title: "Oficina"},
-                    {"data": null,
+                    {title: "Oficina"},,
+                    {title: "status"},
+                     {"data": null,
                 "className": "button",
-                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo(+e.r[i][0]+)" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}
-                ]
+                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo(+e.r[i][0]+)" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}                ]
             });
         }
     });

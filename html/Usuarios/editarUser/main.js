@@ -33,11 +33,7 @@ function LoadUsersInfo() {
           { title: "Correo"},
           { title: "Extencion"},
           { title: "Oficina"},
-          {title: "Estado"},
-          {"data": null,
-          "className": "button",
-          "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo(+e.r[i][0]+)" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}
-         
+          {title: "Estado"},      
          , 
           
         ]              
