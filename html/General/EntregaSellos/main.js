@@ -1,9 +1,9 @@
-
 $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
    // $(function(){ $("foot").load("../../foot.html") });
     GetUsersForReceiveSeals();
-    LoadSealsDepartment();
+   LoadSealsDepartment();
+   
     $('select').select2(); 
 
     $('#Logout').click(function () {
@@ -27,52 +27,27 @@ function GetUsersForReceiveSeals() {
     return false;
 }
 
-function LoadSecuritySeals() {
-    $.post('main.php', {
-        action: 'LoadSecuritySeals'
-      }, function (e) {
-        if (!e.error) {
-          console.log(e.r);
-
-        $('#tbSeals').DataTable({
-          pagingType: 'full_numbers',
-          data: e.r,
-
-          columns: [
-            { title: "ID" },
-            { title: "Color" },
-            { title: "Proveedor" },
-            { title: "Requisicion." },
-            { title: "Referencia" },
-            { title: "Status" },
-            { title: "Fecha adquisicion" }
-        ]
-        });
-        }
-      });
-      return false;
-}
-
 function LoadSealsDepartment() {
   $.post('main.php', {
       action: 'LoadSealsDepartment'
-
     }, function (e) {
       if (!e.error) {
         console.log(e.r);
-
       $('#tbSeals').DataTable({
         pagingType: 'full_numbers',
         data: e.r,
-        order: [[3, 'desc']],
-
-        columns: [
+         columns: [
           { title: "Id_StatusSeal", visible: false },
           { title: "ID Sello" },
           { title: "Numero de Sello" },
           { title: "Estatus" },
-          { title: "Fecha" }
-      ]
+          { title: "Fecha" },
+          {"data": null,
+          "className": "button",
+          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" data-toggle="tooltip"><i class="fas fa-arrow-up"></i></button>  '+
+          '<button type="button" name="BtnEnd" class="btn btn-outline-danger" data-toggle="tooltip"><i class="fas fa-arrow-down"></i></button>'}               
+               ]
+
       });
       }
     });
