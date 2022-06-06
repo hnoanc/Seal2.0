@@ -30,7 +30,7 @@ function LoadUsersInfo(){
                     {title: "Oficina"},
                     {"data": null,
                 "className": "button",
-                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo(+e.r[i][0]+)" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}                ]
+                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}                ]
             });
         }
     });
@@ -67,3 +67,29 @@ function GetUsersForReceiveSeals() {
     });
     return false;
   }
+
+  
+function GetUserInfo(id) {
+
+  var Data = {
+    'ID': id
+  };
+
+  $.post('main.php', {
+    action: 'GetUserInfo',
+    Data: Data
+  }, function (e) {
+    if (!e.error) {
+      $('#UserIDPass').val([0][0]);
+      $('#UserPass').val(e.r[0][1]);
+      $('#CB_Roll').val(e.r[0][2]);
+      $('#CB_Roll').trigger('change');
+      if(e.r[0][3]==1){
+        $('input[value=1]').attr('checked', 'checked');
+      }
+      else{
+       $('input[value=0]').attr('checked', 'checked');
+      }
+    }
+  });
+}

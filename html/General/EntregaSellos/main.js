@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('#navbarNav').load('../../navMenu.html');
-   // $(function(){ $("foot").load("../../foot.html") });
     GetUsersForReceiveSeals();
    LoadSealsDepartment();
    
@@ -44,8 +43,8 @@ function LoadSealsDepartment() {
           { title: "Fecha" },
           {"data": null,
           "className": "button",
-          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" data-toggle="tooltip"><i class="fas fa-arrow-up"></i></button>  '+
-          '<button type="button" name="BtnEnd" class="btn btn-outline-danger" data-toggle="tooltip"><i class="fas fa-arrow-down"></i></button>'}               
+          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" data-toggle="tooltip" ><i id="btnIn" class="fas fa-arrow-up"></i></button>  '+
+          '<button type="button" name="BtnEnd" class="btn btn-outline-danger" data-toggle="tooltip"><i id="btnEnd" class="fas fa-arrow-down"></i></button>'}               
                ]
 
       });
@@ -55,7 +54,6 @@ function LoadSealsDepartment() {
 }
 
 function UpdateSealToSecurity() {
-
   var data = {
       'InitialFolio_ID': $('#txtFolioInicial').val(),
       'FinalFolio_ID': $('#txtFolioFinal').val(),
@@ -73,6 +71,39 @@ function UpdateSealToSecurity() {
               clear();
           }
       });
+  }
+}
+
+
+function SetInitialFolio(SealID, SealNo) {
+  if ($('#txtFolioFinal').val() != '') {
+      if ($('#txtFolioFinal').val() >= SealNo) {
+          $('#txtFolioInicial').addClass("dirty");
+          $('#txtFolioInicial').val(SealNo);
+          InitialSeal_ID = SealID;
+      } else {
+        alert("error 404");
+      }
+  } else {
+      $('#txtFolioInicial').addClass("dirty");
+      $('#txtFolioInicial').val(SealNo);
+      InitialSeal_ID = SealID;
+  }
+}
+
+function SetFinalFolio(SealID, SealNo) {
+  if ($('#txtFolioInicial').val() != '') {
+      if ($('#txtFolioInicial').val() <= SealNo) {
+          $('#txtFolioFinal').addClass("dirty");
+          $('#v').val(SealNo);
+          FinalSeal_ID = SealID;
+      } else {
+        alert("error 404");
+      }
+  } else {
+      $('#txtFolioFinal').addClass("dirty");
+      $('#txtFolioFinal').val(SealNo);
+      FinalSeal_ID = SealID;
   }
 }
 

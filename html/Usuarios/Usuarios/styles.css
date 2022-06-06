@@ -147,16 +147,14 @@ table {
     outline: none !important;
 }
 
-#cbxUser{
-    width: 150px!important;
-}
+
 
 #cbDep{
     position: absolute !important;
     left: -7px !important;
 }
 
-.select2-container {
+.select2-container{
 width: 550px !important;
 
 }
@@ -167,3 +165,7 @@ width: 550px !important;
     left: 55px !important;
 }
 
+
+.modal-content{
+  width: 800px !important;
+}

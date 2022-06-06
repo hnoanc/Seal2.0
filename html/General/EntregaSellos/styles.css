@@ -39,8 +39,30 @@ table {
 }
 
 
+#btnGrd{
+  width: 350px !important;
+}
 
+.btn-outline-success{
+  width: 10px !important;
+  height: 10px !important;
+}
 
+.btn-outline-danger{
+  width: 10px !important;
+  height: 10px !important;
+}
 
+#btnIn{
+  position: relative;
+  top: -8px !important;
+  right: 6px !important;
+}
+
+#btnEnd{
+  position: relative;
+  top: -9px !important;
+  right: 6px !important;
+}
 
 
