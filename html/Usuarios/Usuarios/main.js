@@ -27,9 +27,8 @@ function LoadUsersInfo(){
                     {title: "Departamento"},
                     {title: "Correo"},
                     {title: "Extencion"},
-                    {title: "Oficina"},,
-                    {title: "status"},
-                     {"data": null,
+                    {title: "Oficina"},
+                    {"data": null,
                 "className": "button",
                 "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo(+e.r[i][0]+)" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}                ]
             });
@@ -59,7 +58,7 @@ function GetUsersForReceiveSeals() {
       action: 'GetDepartments'
     }, function (e) {
       if (!e.error) {
-        var $select = $('#CbDep');
+        var $select = $('#cbDep');
         for (let i = 0; i < e.r.length; i++) {
             $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
         }
