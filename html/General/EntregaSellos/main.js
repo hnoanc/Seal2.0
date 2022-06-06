@@ -8,6 +8,9 @@ $(document).ready(function () {
     $('#Logout').click(function () {
       CloseSession()
       });
+
+      
+      
 })
 
 function GetUsersForReceiveSeals() {
@@ -25,6 +28,7 @@ function GetUsersForReceiveSeals() {
     });
     return false;
 }
+
 
 function LoadSealsDepartment() {
   $.post('main.php', {
@@ -46,12 +50,22 @@ function LoadSealsDepartment() {
           "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" data-toggle="tooltip" ><i id="btnIn" class="fas fa-arrow-up"></i></button>  '+
           '<button type="button" name="BtnEnd" class="btn btn-outline-danger" data-toggle="tooltip"><i id="btnEnd" class="fas fa-arrow-down"></i></button>'}               
                ]
+          });
+          
+          var table = $('#tbSeals').DataTable();
 
-      });
+          $("#tbSeals").on('click','#btnIn', function(){
+            let data= table.row($(this).parents('tr')).data();
+            $("#txtFolioInicial").val(data[1])
+          })
       }
     });
+    
     return false;
 }
+
+
+
 
 function UpdateSealToSecurity() {
   var data = {
