@@ -48,14 +48,14 @@ function LoadSealsDepartment() {
           { title: "Fecha" },
           {"data": null,
           "className": "button",
-          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" id="btnIn"><i id="IbtnIn" class="fas fa-arrow-up"></i></button>'+
+          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" id="BtnInt"><i id="IbtnIn" class="fas fa-arrow-up"></i></button>'+
           '<button type="button" name="BtnEnd" class="btn btn-outline-danger"id="btnEnd" ><i id="IbtnEnd" class="fas fa-arrow-down"></i></button>'}               
                ]
           });
           
           var table = $('#tbSeals').DataTable();
 
-          $("#tbSeals").on('click','#btnIn', function(){
+          $("#tbSeals").on('click','#BtnInt', function(){
             let data= table.row($(this).parents('tr')).data();
             $("#txtFolioInicial").val(data[1])
 

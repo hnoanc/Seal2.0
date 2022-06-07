@@ -1,9 +1,10 @@
 .nav-pills{
     width: 450px;
   }
+  /*
   .nav-item{
     width: 50%;
-  }
+  }*/
   .nav-pills .nav-link{
     font-weight: bold;
     padding-top: 13px;
@@ -65,10 +66,6 @@
   }
 
 
-
- /* #Pemail{
-      right: 500px !important;
-  }*/
   .tab-content button {
     border-radius: 43px;
     width: 58px;
@@ -112,13 +109,6 @@ table {
     top: 122px !important;
     right: 115px;
 }
-/*
-#divPass{
-    position: absolute !important;
-    top: 320px !important;
-    right: 90px;
-}
-*/
 
 
 #btnUsr{
