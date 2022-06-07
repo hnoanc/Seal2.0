@@ -51,18 +51,21 @@ table {
 .btn-outline-danger{
   width: 10px !important;
   height: 10px !important;
+  position: relative;
+  left: 9px !important;
 }
 
-#btnIn{
+#IbtnIn{
   position: relative;
   top: -8px !important;
   right: 6px !important;
 }
 
-#btnEnd{
+#IbtnEnd{
   position: relative;
   top: -9px !important;
   right: 6px !important;
+  
 }
 
 

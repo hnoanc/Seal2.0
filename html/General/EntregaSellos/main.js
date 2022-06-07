@@ -7,11 +7,12 @@ $(document).ready(function () {
 
     $('#Logout').click(function () {
       CloseSession()
-      });
-
-      
-      
+      });  
 })
+
+var InitialSeal_ID = 0;
+var FinalSeal_ID = 0;
+
 
 function GetUsersForReceiveSeals() {
     $.post('main.php', {
@@ -47,8 +48,8 @@ function LoadSealsDepartment() {
           { title: "Fecha" },
           {"data": null,
           "className": "button",
-          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" data-toggle="tooltip" ><i id="btnIn" class="fas fa-arrow-up"></i></button>  '+
-          '<button type="button" name="BtnEnd" class="btn btn-outline-danger" data-toggle="tooltip"><i id="btnEnd" class="fas fa-arrow-down"></i></button>'}               
+          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" id="btnIn"><i id="IbtnIn" class="fas fa-arrow-up"></i></button>'+
+          '<button type="button" name="BtnEnd" class="btn btn-outline-danger"id="btnEnd" ><i id="IbtnEnd" class="fas fa-arrow-down"></i></button>'}               
                ]
           });
           
@@ -57,6 +58,26 @@ function LoadSealsDepartment() {
           $("#tbSeals").on('click','#btnIn', function(){
             let data= table.row($(this).parents('tr')).data();
             $("#txtFolioInicial").val(data[1])
+
+            if($('#txtFolioFinal').val() != ''){
+              if($('#txtFolioFinal').val() >= $('#txtFolioFinal').val()){
+                console.error("el folio inicial no puede ser mayor al folio final");
+              }
+            }
+
+             
+          })
+
+          $("#tbSeals").on('click', '#btnEnd', function(){
+            let dataE= table.row($(this).parents('tr')).data();
+            $("#txtFolioFinal").val(dataE[1])
+
+            if($('#txtFolioInicial').val() !=''){
+              if($('#txtFolioInicial').val() >= $('#txtFolioFinal').val()){
+                console.error("El folio final no puede ser menor al folio inicial")
+              }
+            }
+
           })
       }
     });

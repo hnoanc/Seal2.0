@@ -32,6 +32,13 @@ function LoadUsersInfo(){
                 "className": "button",
                 "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}                ]
             });
+
+            var table = $('#tbUser').DataTable();
+
+            $("#tbUser").on('click','#BtnEd', function(){
+              let data= table.row($(this).parents('tr')).data();
+              $("#UserIDPass").val(data[0])
+            })
         }
     });
     return
