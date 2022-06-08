@@ -93,71 +93,24 @@
                     <!-- ============================================================== -->
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
-                        <table class="display" id="tbUser" style="width:100%">
+                        <table class="display" id="tbRequis" style="width:100%">
                             <thead>
-                                <th>Viaje</th>
-                                <th>Tracto</th>
-                                <th>Remolque</th>
-                                <th>Operador</th>
-                                <th>Fecha</th>
-                                <th>Control</th>
-                                <th><i class="fas fa-edit"></i></th>
+                                <th>ID_Requisition</th>
+                                <th>ID_UserDelivery</th>
+                                <th>ID_UserReceives</th>
+                                <th>InitialFolio</th>
+                                <th>FinalFolio</th>
+                                <th>Quantity</th>
+                                <th>ID_supplier</th>
+                                <th>Fecha </th>
+
                             </thead>
                         </table>
                     </div>
 
                     <!-- Modal test -->
  
-                     <div class="modal fade" id="ModUs" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true" style="display: none;">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="formModalLabel">Informacion del usuario</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <form class="form-horizontal" role="form">
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <div class="col-sm-3">
-                                                <label for="UserIDPass" class="control-label">ID</label>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <input type="text"name="UserIDPass" id="UserIDPass" class="form-control" disabled>
-                                                <div class="form-control-line"></div>
-                                            </div>
-                                        </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-3">
-                                            <label for="UserPass" class="control-label">Usuario</label>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="UserPass" id="UserPass" class="form-control" disabled>
-                                            <div class="form-control-line"></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-3">
-                                            <label for="CB_Roll" class="control-label">Roll</label>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <select name="CB_Roll" id="CB_Roll" class="form-control" placeholder="Roll">
-                                                
-                                            </select>
-                                            <div class="form-control-line"></div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary" id="btnUpdate">Guardar</button>
-                                </div>
-                              </form>
-                            </div>
-                        </div>
-                    </div>
+                    
                   </div>     
                 </div>
             </div>
@@ -189,12 +142,7 @@
    <script src="main.js"></script>
    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.12.0/datatables.min.js"></script>
 
-  
-   <script>
-       $('#myModal').on('shown.bs.modal', function () {
-              $('#ModUs').trigger('focus')
-           });
-   </script>
+
    
 
 

@@ -497,6 +497,14 @@ class Admin extends Anonymous
     return json_encode($retval);
   }
 
+  function GetRequisition(){
+    $cnx=$this->connectSqlSrv();
+    $sth = $cnx->prepare("EXEC sp_GetRequisition");
+    $retval=$this->ExecuteSelectAssoc($sth);
+
+    return json_encode($retval);
+  }
+
   function RegUsr($UserData){
     $Password = hash('sha256',$UserData["User_Pss"]);
     $cnx=$this->connectSqlSrv();
