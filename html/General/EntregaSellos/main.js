@@ -48,35 +48,53 @@ function LoadSealsDepartment() {
           { title: "Fecha" },
           {"data": null,
           "className": "button",
-          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" id="BtnInt"><i id="IbtnIn" class="fas fa-arrow-up"></i></button>'+
+          "defaultContent": '<button type="button" name="BtnInt" class="btn btn-outline-success" id="btnIn"><i id="IbtnIn" class="fas fa-arrow-up"></i></button>'+
           '<button type="button" name="BtnEnd" class="btn btn-outline-danger"id="btnEnd" ><i id="IbtnEnd" class="fas fa-arrow-down"></i></button>'}               
                ]
           });
           
           var table = $('#tbSeals').DataTable();
 
-          $("#tbSeals").on('click','#BtnInt', function(){
-            let data= table.row($(this).parents('tr')).data();
-            $("#txtFolioInicial").val(data[1])
+          $("#tbSeals").on('click','#btnIn', function(){
 
-            if($('#txtFolioFinal').val() != ''){
-              if($('#txtFolioFinal').val() >= $('#txtFolioFinal').val()){
-                console.error("el folio inicial no puede ser mayor al folio final");
-              }
+            let data = table.row($(this).parents('tr')).data();
+            let folioInicial = $('#txtFolioInicial').val();
+            let folioFinal = $("#txtFolioFinal").val();
+
+            if (folioFinal.length == 0) {
+              folioFinal = 0;
+            }
+            if (folioInicial.length == 0) {
+              folioFinal = 0;
             }
 
-             
+            if (folioInicial < folioFinal){
+              $("#txtFolioInicial").val(data[1])
+            }else{
+              alert('El folio inicial no puede ser mayor al final')
+            }
+
+
           })
 
           $("#tbSeals").on('click', '#btnEnd', function(){
-            let dataE= table.row($(this).parents('tr')).data();
-            $("#txtFolioFinal").val(dataE[1])
+            let data = table.row($(this).parents('tr')).data();
+            let folioInicial = $('#txtFolioInicial').val();
+            let folioFinal = $("#txtFolioFinal").val();
 
-            if($('#txtFolioInicial').val() !=''){
-              if($('#txtFolioInicial').val() >= $('#txtFolioFinal').val()){
-                console.error("El folio final no puede ser menor al folio inicial")
-              }
+            if (folioFinal.length == 0) {
+              folioFinal = 0;
             }
+            if (folioInicial.length == 0) {
+              folioFinal = 0;
+            }
+
+            if (folioFinal > folioInicial){
+              $("#txtFolioInicial").val(data[1])
+            }else{
+              alert('El folio inicial no puede ser mayor al final')
+            }
+
 
           })
       }

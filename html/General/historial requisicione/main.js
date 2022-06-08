@@ -26,8 +26,8 @@ function GetRequisition() {
             { data: 'InitialFolio'},
             { data: 'FinalFolio'},
             { data: 'Quantity'},
-            { data: 'ID_supplier'},
-            { data: 'Data'}] 
+            { data: 'ID_Supplier'},
+            { data: 'Date'}] 
         }); 
         }
       });
