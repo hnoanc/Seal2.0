@@ -87,6 +87,21 @@
                         <div class="card">
                             <h5 class="card-header center-text">Historial de requisiciones</h5>
                             <div class="card-body">
+                                <form class="form" id="MyForm">
+                                    <div class="form-group floating-label col-md-6">
+                                        <label form="txtEnvelope">No. de folio de sobre</label>
+
+                                        <input type="text" class="form--control" id="txtEnvelope" >
+                                    </div>
+                                </form>
+                                <div class="col-md-2 float-right" id="dvCk">
+                                    <div class="checkbox checkbox-styled">
+                                        <label>
+                                            <input type="checkbox" id="ckWalmart" value="">
+                                            <span>Cliente Walmart</span>
+                                        </label>
+                                    </div>
+                                </div>
   
                     <!-- ============================================================== -->
                     <!-- Data Table -->
@@ -103,18 +118,16 @@
                                 <th>Quantity</th>
                                 <th>ID_Supplier</th>
                                 <th>Fecha</th>
+                                <th>Control</th>
+                                
 
                             </thead>
                         </table>
                     </div>
-
-                    <!-- Modal test -->
- 
-                    
-                  </div>     
-                </div>
+                </div>     
             </div>
         </div>
+    </div>
                     <!-- ============================================================== -->
                     <!-- end validation form -->
                     <!-- ============================================================== -->

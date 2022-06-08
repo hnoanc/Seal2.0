@@ -14,3 +14,16 @@ table {
     background-color: #4adbd4;
     color: white;
   }
+
+ #dvCk{
+   top: -45px !important;
+   left: 50px !important;
+ }
+
+ 
+.dataTables_filter { /*filter search*/
+  position:inherit;
+       top: -7px;
+       right: -255px !important;
+   
+ }
