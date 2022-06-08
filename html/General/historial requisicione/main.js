@@ -27,7 +27,11 @@ function GetRequisition() {
             { data: 'FinalFolio'},
             { data: 'Quantity'},
             { data: 'ID_Supplier'},
-            { data: 'Date'}] 
+            { data: 'Date'},
+            { "data": null,
+            "className": "button",
+              "defaultContent": '<button class="btn btn-outline-success btn-rounded waves-effect"><i class="fas fa-print"></i></button>'
+          }] 
         }); 
         }
       });
