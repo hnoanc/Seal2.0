@@ -61,40 +61,52 @@ function LoadSealsDepartment() {
             let folioInicial = $('#txtFolioInicial').val();
             let folioFinal = $("#txtFolioFinal").val();
 
-            if (folioFinal.length == 0) {
-              folioFinal = 0;
-            }
-            if (folioInicial.length == 0) {
-              folioFinal = 0;
-            }
-
-            if (folioInicial < folioFinal){
-              $("#txtFolioInicial").val(data[1])
-            }else{
-              alert('El folio inicial no puede ser mayor al final')
+            if (folioInicial != "" && folioFinal != "") {
+              if (data[1] > folioInicial ){
+                $("#txtFolioInicial").val(data[1])
+              }else{
+                alert('El folio inicial no puede ser mayor al final2')
+              }
             }
 
+            if ($('#txtFolioFinal').val() == "" || $('#txtFolioFinal').val() == null ) {
+              if ($('#txtFolioInicial').val() < data[1]) {
+                $("#txtFolioInicial").val(data[1])
+              }else{
+                alert('El folio inicial no puede ser mayor al final')
+              }
+            }
 
           })
+
+
+
+
 
           $("#tbSeals").on('click', '#btnEnd', function(){
             let data = table.row($(this).parents('tr')).data();
             let folioInicial = $('#txtFolioInicial').val();
             let folioFinal = $("#txtFolioFinal").val();
 
-            if (folioFinal.length == 0) {
-              folioFinal = 0;
+            if (folioInicial != "" && folioFinal != "") {
+              if (data[1] > folioInicial ){
+                $("#txtFolioFinal").val(data[1])
+              }else{
+                alert('El folio inicial no puede ser mayor al final2')
+              }
             }
-            if (folioInicial.length == 0) {
-              folioFinal = 0;
+            
+            else{
+              $("#txtFolioFinal").val(data[1])
             }
 
-            if (folioFinal > folioInicial){
-              $("#txtFolioInicial").val(data[1])
-            }else{
-              alert('El folio inicial no puede ser mayor al final')
+            if ($('#txtFolioInicial').val() == "" || $('#txtFolioInicial').val() == null) {
+              if ($('#txtFolioInicial').val() < data[1]) {
+                $("#txtFolioFinal").val(data[1])
+              }else{
+                alert('El folio inicial no puede ser mayor al final3')
+              }
             }
-
 
           })
       }
