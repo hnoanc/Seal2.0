@@ -66,6 +66,7 @@ function LoadSealsDepartment() {
             }
             if (folioInicial.length == 0) {
               folioFinal = 0;
+<<<<<<< Updated upstream
             }
 
             if (folioInicial < folioFinal){
@@ -75,6 +76,18 @@ function LoadSealsDepartment() {
             }
 
 
+=======
+            }
+
+            if (folioInicial < folioFinal){
+              $("#txtFolioInicial").val(data[1])
+            }
+
+            if (folioFinal > folioInicial){
+              console.error("el folio inicial no puede ser mayor al folio final");
+            }
+
+>>>>>>> Stashed changes
           })
 
           $("#tbSeals").on('click', '#btnEnd', function(){
@@ -82,8 +95,17 @@ function LoadSealsDepartment() {
             let folioInicial = $('#txtFolioInicial').val();
             let folioFinal = $("#txtFolioFinal").val();
 
+<<<<<<< Updated upstream
             if (folioFinal.length == 0) {
               folioFinal = 0;
+=======
+
+
+            if($('#txtFolioInicial').val() !=''){
+              if($('#txtFolioInicial').val() >= $('#txtFolioFinal').val()){
+                console.error("El folio final no puede ser menor al folio inicial")
+              }
+>>>>>>> Stashed changes
             }
             if (folioInicial.length == 0) {
               folioFinal = 0;
