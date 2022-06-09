@@ -22,20 +22,43 @@ function LoadSecuritySeals() {
         $('#tbUser').DataTable({
           pagingType: 'full_numbers',
           data: e.r,
+          dom: 'Blfrtip',
   
           columns: [
-            { title: "Vijae"},
-            { title: "Tracto"},
-            { title: "Remolque"},
-            { title: "Operador"},
-            { title: "Fecha"},
-            { title: "Control"},
-            {"data": null,
-            "className": "button",
-            "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" Onclick="GetUserInfo()" data-toggle="modal" data-target="#ModUs"><i class="fas fa-eye"></i></button>'}
-        
-           ,
-          ] 
+            { title: 'Viaje'},
+            { title: 'Tracto'},
+            { title: 'Remolque'},
+            { title: 'Operador'},
+            { title: 'Fecha'},
+            { title: 'id'},
+            { title: 'test'}],
+            buttons:[
+              {
+                extends: 'copyHtml5',
+                text: '<i class="fas fa-copy"></i> copy',
+                titleAttr: 'Copy'
+              },
+              {
+                extends: 'excelHtml5',
+                text: '<i class="fas fa-file-excel"></i> Excel',
+                titleAttr: 'Excel'
+              },
+              {
+                extends: 'cvsHtml5',
+                text: '<i class="fas fa-file-csv"></i> CSV',
+                titleAttr: 'CSV'
+              },
+              {
+                extends: 'pdfHtml5',
+                text: '<i class="fas fa-file-pdf"></i> PDF',
+                titleAttr: 'PDF',
+              },
+              {
+              extends: 'print',
+              text: '<i class="fas fa-print"></i> Print',
+              titleAttr: 'Print'
+             },
+        ], 
         }); 
         }
       });

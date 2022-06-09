@@ -39,8 +39,8 @@ function LoadAllSecuritySeals() {
             { title: "Color" },
             { title: "Proveedor" },
             { title: "Requisicion" },
-	        { title: "Referencia/Viaje" },
-	        { title: "Status" },
+	          { title: "Referencia/Viaje" },
+	          { title: "Status" },
             { title: "Fecha Recibido" }
         ],
         buttons: [ 
