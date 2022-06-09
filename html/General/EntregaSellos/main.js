@@ -58,24 +58,11 @@ function LoadSealsDepartment() {
           $("#tbSeals").on('click','#btnIn', function(){
 
             let data = table.row($(this).parents('tr')).data();
+
             let folioInicial = $('#txtFolioInicial').val();
-            let folioFinal = $("#txtFolioFinal").val();
+            let folioFinal = $('#txtFolioFinal').val();
 
-            if (folioInicial != "" && folioFinal != "") {
-              if (data[1] > folioInicial ){
-                $("#txtFolioInicial").val(data[1])
-              }else{
-                alert('El folio inicial no puede ser mayor al final2')
-              }
-            }
-
-            if ($('#txtFolioFinal').val() == "" || $('#txtFolioFinal').val() == null ) {
-              if ($('#txtFolioInicial').val() < data[1]) {
-                $("#txtFolioInicial").val(data[1])
-              }else{
-                alert('El folio inicial no puede ser mayor al final')
-              }
-            }
+            $("#txtFolioInicial").val(data[1])
 
           })
 
@@ -88,25 +75,7 @@ function LoadSealsDepartment() {
             let folioInicial = $('#txtFolioInicial').val();
             let folioFinal = $("#txtFolioFinal").val();
 
-            if (folioInicial != "" && folioFinal != "") {
-              if (data[1] > folioInicial ){
-                $("#txtFolioFinal").val(data[1])
-              }else{
-                alert('El folio inicial no puede ser mayor al final2')
-              }
-            }
-            
-            else{
               $("#txtFolioFinal").val(data[1])
-            }
-
-            if ($('#txtFolioInicial').val() == "" || $('#txtFolioInicial').val() == null) {
-              if ($('#txtFolioInicial').val() < data[1]) {
-                $("#txtFolioFinal").val(data[1])
-              }else{
-                alert('El folio inicial no puede ser mayor al final3')
-              }
-            }
 
           })
       }
