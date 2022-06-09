@@ -58,43 +58,24 @@ function LoadSealsDepartment() {
           $("#tbSeals").on('click','#btnIn', function(){
 
             let data = table.row($(this).parents('tr')).data();
+
             let folioInicial = $('#txtFolioInicial').val();
-            let folioFinal = $("#txtFolioFinal").val();
+            let folioFinal = $('#txtFolioFinal').val();
 
-            if (folioFinal.length == 0) {
-              folioFinal = 0;
-            }
-            if (folioInicial.length == 0) {
-              folioFinal = 0;
-            }
-
-            if (folioInicial < folioFinal){
-              $("#txtFolioInicial").val(data[1])
-            }else{
-              alert('El folio inicial no puede ser mayor al final')
-            }
-
+            $("#txtFolioInicial").val(data[1])
 
           })
+
+
+
+
 
           $("#tbSeals").on('click', '#btnEnd', function(){
             let data = table.row($(this).parents('tr')).data();
             let folioInicial = $('#txtFolioInicial').val();
             let folioFinal = $("#txtFolioFinal").val();
 
-            if (folioFinal.length == 0) {
-              folioFinal = 0;
-            }
-            if (folioInicial.length == 0) {
-              folioFinal = 0;
-            }
-
-            if (folioFinal > folioInicial){
-              $("#txtFolioInicial").val(data[1])
-            }else{
-              alert('El folio inicial no puede ser mayor al final')
-            }
-
+              $("#txtFolioFinal").val(data[1])
 
           })
       }
