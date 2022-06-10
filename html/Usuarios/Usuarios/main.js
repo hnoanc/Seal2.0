@@ -3,7 +3,9 @@ $(document).ready(function(){
     LoadUsersInfo();
     GetDepartments();
 
-
+    $('#btnUsr').click(function () {
+      CloseSession()
+      });
     
     GetUsersForReceiveSeals();
     $('select').select2(); 
