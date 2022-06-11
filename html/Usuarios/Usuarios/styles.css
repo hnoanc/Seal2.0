@@ -32,9 +32,6 @@
     left: 160px;
   }
 
-
-
-
   #tabU{
       position: absolute !important;
       left: 50px !important;
@@ -75,7 +72,7 @@
 
 table.dataTable {
     clear: both;
-    margin-top: 37px !important;
+    margin-top: 7px !important;
     margin-bottom: 78px !important;
     max-width: none !important;
     border-collapse: separate !important;

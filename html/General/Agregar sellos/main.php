@@ -4,6 +4,9 @@ if(isset($_POST['action'])){
     $obj = new Admin();
     header('Content-Type: application/json');
     switch($_POST['action']){
+        case 'LoadUsersInfo':
+            echo $obj-> LoadUsersInfo();
+            break;
         
         /*algo*/
     }
