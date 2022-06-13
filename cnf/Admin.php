@@ -527,10 +527,10 @@ class Admin extends Anonymous
 
   function SaveSeals($SealsData){
     $cnx=$this->connectSqlSrv();
-    $sth=$cnx->prepare("Exec sp_UserRegistry ?,?,?");
-    $sth->bindParam(1, $SealsData["User_Name"]);
-    $sth->bindParam(2, $SealsData["User_FLast"]);
-    $sth->bindParam(3, $SealsData["User_MLast"]);
+    $sth=$cnx->prepare("Exec sp_AddSealsRecycled ?,?,?");
+    $sth->bindParam(1, $SealsData["NoSello"]);
+    $sth->bindParam(2, $SealsData["Color"]);
+    $sth->bindParam(3, $SealsData["Reference"]);
     $retval=$this->ExecuteNoQuery($sth);
 
     return json_encode($retval);

@@ -8,15 +8,18 @@ $(document).ready(function(){
         });
 
     $('#btnSv').click(function () {
-        CloseSession()
+        let NoSello = $('#txtNoSello').val()
+        let Color = $('#txtColor').val()
+        let Reference = $('#taxRef').val()
+        GuardarSellos()
         });
 })
 
 function GuardarSellos(){
     var data = {
         'NoSello': $('#txtNoSello').val(),
-        'txtColor': $('#txtColor').val(),
-        'taxRef': $('#taxRef').val()
+        'Color': $('#txtColor').val(),
+        'Reference': $('#taxRef').val()
     };
   
     //if (Validar()) {
@@ -25,7 +28,7 @@ function GuardarSellos(){
             Data: data
         }, function(e) {
             if (!e.error) {
-                alert('asdasd')
+                console.log("asdasd")
             }
         });
     //}
