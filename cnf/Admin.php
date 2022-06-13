@@ -525,6 +525,17 @@ class Admin extends Anonymous
     return json_encode($retval);
   }
 
+  function SaveSeals($SealsData){
+    $cnx=$this->connectSqlSrv();
+    $sth=$cnx->prepare("Exec sp_UserRegistry ?,?,?");
+    $sth->bindParam(1, $SealsData["User_Name"]);
+    $sth->bindParam(2, $SealsData["User_FLast"]);
+    $sth->bindParam(3, $SealsData["User_MLast"]);
+    $retval=$this->ExecuteNoQuery($sth);
+
+    return json_encode($retval);
+  }
+
   function LoadUsersInfo(){
     $cnx=$this->connectSqlSrv();
     $sth=$cnx->prepare("Exec sp_GetUsers");

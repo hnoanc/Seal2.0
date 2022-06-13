@@ -7,6 +7,9 @@ if(isset($_POST['action'])){
         case 'LoadUsersInfo':
             echo $obj-> LoadUsersInfo();
             break;
+        case 'SaveSeals':
+            echo $obj-> SaveSeals($_POST['Data']);
+            break;
         
         /*algo*/
     }

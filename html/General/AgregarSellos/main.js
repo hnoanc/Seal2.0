@@ -6,7 +6,30 @@ $(document).ready(function(){
     $('#Logout').click(function () {
         CloseSession()
         });
+
+    $('#btnSv').click(function () {
+        CloseSession()
+        });
 })
+
+function GuardarSellos(){
+    var data = {
+        'NoSello': $('#txtNoSello').val(),
+        'txtColor': $('#txtColor').val(),
+        'taxRef': $('#taxRef').val()
+    };
+  
+    //if (Validar()) {
+        $.post('main.php', {
+            action: 'SaveSeals',
+            Data: data
+        }, function(e) {
+            if (!e.error) {
+                alert('asdasd')
+            }
+        });
+    //}
+}
 
 
 function LoadUsersInfo(){
