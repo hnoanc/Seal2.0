@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.12.0/datatables.min.css"/>
     <link rel="stylesheet" href="../../../assets/css/select2.min.css">
+    
     <link rel="stylesheet" href="styles.css">
     <title>SEAL</title>
 </head>
@@ -97,14 +98,14 @@
                         <form>
                           <table class="display" id="tbSeals" style="width:100%">
                             <thead>
-                                <th>test</th>
-                                <th>test</th>
-                                <th>test</th>
-                                <th>test</th>
-                                <th>test</th>
-                                <th>test</th>
-                                <th>test</th>
-                                <th>test</th>
+                                <th>ID_Seal</th>
+                                <th>SealNo</th>
+                                <th>SealType</th>
+                                <th>Color</th>
+                                <th>Supplier_ID</th>
+                                <th>Source</th>
+                                <th>Office_ID</th>
+                                <th>Reference</th>
                             </thead>
                         </table>
                         </form>
@@ -147,18 +148,17 @@
                                  </div>
 
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                                     <div id="dvAlert"><h3 id="alertMsg"></h3></div>
                                     <button class="btn btn-primary btn-lg btn-block" type="button" id="btnSv">Guardar</button>
                                 </div>
-
-                             </form>
-                            </div>
-                        </form>
-                      </div>
-                    </div>
-
-                  </div> 
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div> 
-    </div>
+    </div> 
+</div>
 </div> 
 
 
@@ -179,6 +179,7 @@
 <script src="../../../assets/js/select2.min.js"></script>
 <script src="main.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.12.0/datatables.min.js"></script>
+
 
 
 
