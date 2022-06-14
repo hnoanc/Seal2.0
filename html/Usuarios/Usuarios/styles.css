@@ -155,3 +155,6 @@ width: 550px !important;
 .modal-content{
   width: 800px !important;
 }
+body {
+  overflow:hidden;
+}

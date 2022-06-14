@@ -30,6 +30,7 @@
     padding: 30px;
     margin-bottom: 50px;
     left: 160px;
+    top: 211px !important;
   }
 
   input[type="radio"] {
@@ -106,4 +107,8 @@ th{
   position: relative;
   top: 100px !important;
  
+}
+
+body {
+  overflow:hidden;
 }
