@@ -2,23 +2,13 @@ $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
 
     LoadSealRecycled();
+    guardar();
 
     $('#Logout').click(function () {
         CloseSession()
         });
 
-    $('#btnSv').click(function () {
-        let NoSello = $('#txtNoSello').val()
-        let Color = $('#txtColor').val()
-        let Reference = $('#taxRef').val()
-
-        if(NoSello == '' | Color == '' | Reference== ''){
-            alert('Favor de llenar todos los campos')
-            
-        }else{
-            GuardarSellos();
-        }
-        });
+    
 })
 
 function GuardarSellos(){
@@ -66,4 +56,40 @@ function LoadSealRecycled(){
         }
     });
     return
+}
+
+function guardar(){
+
+    $('#btnSv').click(function () {
+        let NoSello = $('#txtNoSello').val()
+        let Color = $('#txtColor').val()
+        let Reference = $('#taxRef').val()
+
+        if(NoSello == '' | Color == '' | Reference== ''){
+          
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Los campos estan vacillos'
+            })
+            
+        }else{
+            GuardarSellos();
+
+             Swal.fire({
+                icon: 'success',
+                title: 'Logrado',
+                text: 'Los datos se han guardado'
+            })
+           
+            clear();
+        }
+        });
+}
+
+function clear(){
+    $('input[type="text"]').val('');
+    $('textarea').val('');
+
 }

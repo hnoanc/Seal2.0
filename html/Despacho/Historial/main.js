@@ -32,32 +32,33 @@ function LoadSecuritySeals() {
             { title: 'Fecha'},
             { title: 'id'},
             { title: 'test'}],
-            buttons:[
-              {
-                extends: 'copyHtml5',
-                text: '<i class="fas fa-copy"></i> copy',
-                titleAttr: 'Copy'
-              },
-              {
-                extends: 'excelHtml5',
-                text: '<i class="fas fa-file-excel"></i> Excel',
-                titleAttr: 'Excel'
-              },
-              {
-                extends: 'cvsHtml5',
-                text: '<i class="fas fa-file-csv"></i> CSV',
-                titleAttr: 'CSV'
-              },
-              {
-                extends: 'pdfHtml5',
-                text: '<i class="fas fa-file-pdf"></i> PDF',
-                titleAttr: 'PDF',
-              },
-              {
-              extends: 'print',
+           
+        buttons: [ 
+          {
+              extend: 'copyHtml5',
+              text: '<i class="fas fa-copy"></i> Copy',
+              titleAttr: 'Copy'
+          },
+          {
+              extend: 'excelHtml5',
+              text: '<i class="fas fa-file-excel"></i> Excel',
+              titleAttr: 'Excel'
+          },
+          {
+              extend: 'csvHtml5',
+              text: '<i class="fas fa-file-csv"></i> CSV',
+              titleAttr: 'CSV'
+          },
+          {
+              extend: 'pdfHtml5',
+              text: '<i class="fas fa-file-pdf"></i> PDF',
+              titleAttr: 'PDF'
+          },
+          {
+              extend: 'print',
               text: '<i class="fas fa-print"></i> Print',
               titleAttr: 'Print'
-             },
+          }  ,
         ], 
         }); 
         }

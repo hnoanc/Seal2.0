@@ -25,7 +25,13 @@ $(document).ready(function () {
 
       if (folioInicial == '' || folioFinal == '' || user == '' || color == '' || proveedor == '' || referencia == '' || quantity == '' ||
           folioInicial == null || folioFinal == null || user == null || color == null || proveedor == null || referencia == null || quantity == null) {
-        alert('Favor de llenar todos los campos')
+        
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Los campos estan vacillos'
+          })
+
       } else {
         AddSealsFromPurchase();
       }
@@ -52,15 +58,22 @@ function AddSealsFromPurchase() {
         Data: data
       }, function (e) {
         if (!e.error) {
-          const div = document.getElementById("divAlert");
-          document.getElementById("alertMessage").textContent="Guardado correctamente";
-          div.style.backgroundColor = "#6ab150"
+         
           window.open('pdf.php?User=' + $('#cbxUser').val() + '&Type=R&InitialFolio=' + $('#txtFolioInicial').val() +'&FinalFolio='+$('#txtFolioFinal').val() +'&UserR', '_blank');
+          Swal.fire({
+                icon: 'success',
+                title: 'Logrado',
+                text: 'Los datos se han guardado'
+            })
+
           limpiar()
         
         }else{
-          document.getElementById("alertMessage").textContent="Ha fallado correctamente";
-          div.style.backgroundColor = "#f86f6f"
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Los campos estan vacillos'
+        })
         }
       });
 }
