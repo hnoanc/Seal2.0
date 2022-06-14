@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
 
-    LoadUsersInfo();
+    LoadSealRecycled();
 
     $('#Logout').click(function () {
         CloseSession()
@@ -11,7 +11,13 @@ $(document).ready(function(){
         let NoSello = $('#txtNoSello').val()
         let Color = $('#txtColor').val()
         let Reference = $('#taxRef').val()
-        GuardarSellos()
+
+        if(NoSello == '' | Color == '' | Reference== ''){
+            alert('Favor de llenar todos los campos')
+            
+        }else{
+            GuardarSellos();
+        }
         });
 })
 
@@ -35,10 +41,10 @@ function GuardarSellos(){
 }
 
 
-function LoadUsersInfo(){
+function LoadSealRecycled(){
   
     $.post('main.php', {
-        action: 'LoadUsersInfo'
+        action: 'LoadSealRecycled'
     }, function (e){
         if (!e.error){
             console.log(e.r);
@@ -47,24 +53,16 @@ function LoadUsersInfo(){
                 data: e.r,
 
                 columns: [
-                    {title: "ID"},
-                    {title: "Nombre"},
-                    {title: "Rol"},
-                    {title: "Departamento"},
-                    {title: "Correo"},
-                    {title: "Extencion"},
-                    {title: "Oficina"},
-                    {"data": null,
-                "className": "button",
-                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}                ]
+                    {data: 'Id_Seal'},
+                    {data: 'SealNo'},
+                    {data: 'SealType'},
+                    {data: 'Color'},
+                    {data: 'Supplier_ID'},
+                    {data: 'Source', visible: false},
+                    {data: 'Office_ID'},
+                    {data: 'Reference'},
+                   ]
             });
-
-            var table = $('#tbUser').DataTable();
-
-            $("#tbUser").on('click','#BtnEd', function(){
-              let data= table.row($(this).parents('tr')).data();
-              $("#UserIDPass").val(data[0])
-            })
         }
     });
     return
