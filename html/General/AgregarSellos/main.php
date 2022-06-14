@@ -4,8 +4,8 @@ if(isset($_POST['action'])){
     $obj = new Admin();
     header('Content-Type: application/json');
     switch($_POST['action']){
-        case 'LoadUsersInfo':
-            echo $obj-> LoadUsersInfo();
+        case 'LoadSealRecycled':
+            echo $obj-> LoadSealRecycled();
             break;
         case 'SaveSeals':
             echo $obj-> SaveSeals($_POST['Data']);
