@@ -49,6 +49,15 @@ function UserLogin() {
         } else {
             //Core.ShowNotific8('Usuario o Contraseña incorrecta, favor de verificar', 'ruby', false);
             $('#btnLogin').removeAttr('disabled');
+            
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Ooops...',
+                text: 'Usuario o contraseña erroneos',
+                showConfirmButton: false,
+                timer: 2500
+            })
         }
     });
     $('#btnLogin').removeAttr('disabled');
