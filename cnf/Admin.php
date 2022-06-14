@@ -27,6 +27,13 @@ class Admin extends Anonymous
     return json_encode($retval);
   }
 
+  function LoadSealRecycled(){
+    $cnx=$this->connectSqlSrv();
+    $sth=$cnx->prepare("Exec sp_LoadSealsRecycle");
+    $retval=$this->ExecuteSelectAssoc($sth);
+    return json_encode($retval);
+  }
+
   function LoadSecuritySeals(){
     $cnx=$this->connectSqlSrv();
     $sth=$cnx->prepare("Exec sp_LoadSecuritySeals");
