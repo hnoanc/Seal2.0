@@ -41,6 +41,8 @@ function LoadSealRecycled(){
             $('#tbSeals').DataTable({
                 paginType: 'full_numbers',
                 data: e.r,
+                "lengthChange": false,
+                "iDisplayLength": 16,
 
                 columns: [
                     {data: 'Id_Seal'},
@@ -75,15 +77,21 @@ function guardar(){
             })
             
         }else{
-            GuardarSellos();
 
-             Swal.fire({
-                icon: 'success',
-                title: 'Logrado',
-                text: 'Los datos se han guardado'
-            })
-           
-            clear();
+  $.post('main.php', {
+            action: 'SaveSeals',
+            Data: data
+        }, function(e) {
+            if (!e.error) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Logrado',
+                    text: 'Los datos se han guardado'
+                })
+
+            }
+        });
+        clear();
         }
         });
 }
