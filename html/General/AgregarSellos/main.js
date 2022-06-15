@@ -77,21 +77,15 @@ function guardar(){
             })
             
         }else{
+            GuardarSellos();
 
-  $.post('main.php', {
-            action: 'SaveSeals',
-            Data: data
-        }, function(e) {
-            if (!e.error) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Logrado',
-                    text: 'Los datos se han guardado'
-                })
-
-            }
-        });
-        clear();
+             Swal.fire({
+                icon: 'success',
+                title: 'Logrado',
+                text: 'Los datos se han guardado'
+            })
+           
+            clear();
         }
         });
 }
