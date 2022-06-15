@@ -103,21 +103,3 @@ function GetUserInfo(id) {
     }
   });
 }
-
-function addUser(){
-  $('#btnUpdate').click(function (){
-    let User = $('#cbxUser').val()
-    let Dep = $('#cbDep').val()
-
-    if(User == '' | Dep == ''){
-      
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Los campos estan vacillos'
-    })
-
-    }
-  })
-
-}
