@@ -242,6 +242,19 @@ class Admin extends Anonymous
     session_write_close();
     return json_encode($retval);
   }
+
+  function SaveSealsDelivery($Data){
+    session_start();
+    $cnx=$this->connectSqlSrv();
+    $sth=$cnx->prepare("Exec sp_AddNewDelivery ?,?,?");
+    $sth->bindParam(1, $Data["Travel"]);
+    $sth->bindParam(2, $Data["SealsID"]);
+    $sth->bindParam(3, $_SESSION['SESSINFOSEAL']['User_Usr']);
+    $retval=$this->ExecuteNoQuery($sth);
+    session_write_close();
+    return json_encode($retval);
+  }
+
   function GetTravelInfo($Data){
     
     session_start();

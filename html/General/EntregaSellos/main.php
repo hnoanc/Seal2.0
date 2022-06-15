@@ -18,6 +18,10 @@ if(isset($_POST['action'])){
 		case 'UpdateSealToSecurity':
 			echo $obj->UpdateSealToSecurity($_POST['Data']);
 			break;
+
+		case 'SaveSealsDelivery':
+			echo $obj->SaveSealsDelivery($_POST['Data']);
+			break;	
 			
 		default:
 		echo "Opción Inválida";
