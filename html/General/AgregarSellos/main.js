@@ -24,7 +24,7 @@ function GuardarSellos(){
             Data: data
         }, function(e) {
             if (!e.error) {
-                console.log("asdasd")
+                console.log("mensaje desde la pagina")
             }
         });
     //}
