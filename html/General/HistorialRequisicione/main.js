@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 
 
+
   $('#Logout').click(function () {
     CloseSession()
     });
@@ -30,10 +31,24 @@ function GetRequisition() {
             { data: 'Date'},
             { "data": null,
             "className": "button",
-              "defaultContent": '<button class="btn btn-outline-success waves-effect"><i class="fas fa-print"></i></button>'
-          }] 
-        }); 
+              "defaultContent": '<button class="btn btn-outline-success waves-effect" id="btnPrint"><i class="fas fa-print"></i></button>'}
+            ] 
+        });
+        var table = $('tbRequis').DataTable();
+        
+        $("#tbRequis tbody").on('click', 'button', function(){
+
+        var data = table.row( $(this).parent('tr') ).data();
+        alert(data[0])
+
+        })
+
+
         }
       });
       return false;
   }
+
+ 
+
+
