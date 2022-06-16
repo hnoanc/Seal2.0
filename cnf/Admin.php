@@ -34,6 +34,13 @@ class Admin extends Anonymous
     return json_encode($retval);
   }
 
+  function LoadDelivery(){
+    $cnx=$this->connectSqlSrv();
+    $sth=$cnx->prepare('Exec sp_LoadDeliveries');
+    $retval=$this->ExecuteSelectAssoc($sth);
+    return json_encode($retval);
+  }
+
   function LoadSecuritySeals(){
     $cnx=$this->connectSqlSrv();
     $sth=$cnx->prepare("Exec sp_LoadSecuritySeals");
