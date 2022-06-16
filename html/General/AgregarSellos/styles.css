@@ -1,10 +1,7 @@
 .nav-pills{
     width: 450px;
   }
-  /*
-  .nav-item{
-    width: 50%;
-  }*/
+
   .nav-pills .nav-link{
     font-weight: bold;
     padding-top: 13px;

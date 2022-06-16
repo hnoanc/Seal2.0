@@ -36,12 +36,12 @@ function GetRequisition() {
         });
         var table = $('tbRequis').DataTable();
         
-        $("#tbRequis tbody").on('click', 'button', function(){
-
-        var data = table.row( $(this).parent('tr') ).data();
-        alert(data[0])
-
-        })
+        $('#tbRequis').on( 'click', 'button', function () {
+         
+          var data = tbRequis.row( $(this).parents('tr') ).data();
+          
+          alert(  data.FinalFolio );
+      } );
 
 
         }

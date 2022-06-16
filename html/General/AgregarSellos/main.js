@@ -69,7 +69,6 @@ function guardar(){
 
         if(NoSello == '' | Color == '' | Reference== ''){
           
-
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
