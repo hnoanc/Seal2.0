@@ -8,10 +8,38 @@ $(document).ready(function () {
     $('#Logout').click(function () {
       CloseSession()
       });  
+    
+    $('#btnGrd').click(function () {
+      SaveSealsDelivery()
+      });    
 })
 
 var InitialSeal_ID = 0;
 var FinalSeal_ID = 0;
+
+function SaveSealsDelivery(){
+  var data = {
+    'UserReceives': $('#txtFolioInicial').val(),
+    'Quantity': $('#txtFolioFinal').val(),
+    'InitialFolio': $('#cbxUser').val(),
+    'FinalFolio': $('#cbxUser').val()
+
+  };
+
+//if (Validar()) {
+    $.post('main.php', {
+        action: 'SaveSealsDelivery',
+        Data: data
+    }, function(e) {
+        if (!e.error) {
+            //window.open('pdf.php?User=' + $('#cbxUser').val() + '&Type=R&InitialFolio=' + $('#txtFolioInicial').val() + '&FinalFolio=' + $('#txtFolioFinal').val() + '&UserR', '_blank');
+            //LoadSecuritySeals();
+            //clear();
+            alert('Simon Pa')
+        }
+    });
+//}
+}
 
 
 function GetUsersForReceiveSeals() {
