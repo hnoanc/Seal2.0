@@ -7,8 +7,8 @@ if(isset($_POST['action'])){
       case 'LoadUsersInfo':
       echo $obj -> LoadUsersInfo();
       break;
-      case 'GetUsersForReceiveSeals':
-        echo $obj-> GetUsersForReceiveSeals();
+      case 'GetUsersWithOutAccess':
+        echo $obj-> GetUsersWithOutAccess();
         break;
         case 'GetDepartments':
           echo $obj-> GetDepartments();

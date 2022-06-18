@@ -1,18 +1,22 @@
 $(document).ready(function(){
     $('#navbarNav').load('../../navMenu.html');
-    LoadUsersInfo();
+    GetUsersWithOutAccess();
     GetDepartments();
+    LoadUsersInfo();
 
+    
     $('#btnUsr').click(function () {
       CloseSession()
       });
-    
-    GetUsersForReceiveSeals();
+
+      $('#btnUsr').click(function (){
+        AddUser();
+      })
     $('select').select2(); 
 })
 
+
 function LoadUsersInfo(){
-  
     $.post('main.php', {
         action: 'LoadUsersInfo'
     }, function (e){
@@ -22,7 +26,6 @@ function LoadUsersInfo(){
                 paginType: 'full_numbers',
                 data: e.r,
                 "lengthChange": false,
-
                 columns: [
                     {title: "ID"},
                     {title: "Nombre"},
@@ -33,35 +36,33 @@ function LoadUsersInfo(){
                     {title: "Oficina"},
                     {"data": null,
                 "className": "button",
-                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" data-toggle="modal" data-target="#ModUs"><i class="fas fa-edit"></i></button>'}                ]
+                "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" data-toggle="modal" data-target="#ModUs" ><i class="fas fa-edit"></i></button>'}
+              ]
             });
 
-            var table = $('#tbUser').DataTable();
+            $("#tbUser tbody").on('click','button', function(){
 
-            $("#tbUser").on('click','#BtnEd', function(){
-              let data= table.row($(this).parents('tr')).data();
-              $("#UserIDPass").val(data[0])
+           var currentRow = $(this).closest("tr");
+
+           var UserId = currentRow.find("td:eq(0)").text();
+           var UserName = currentRow.find("td:eq(1)").text();
+           var UsDep = currentRow.find("td:eq(2)").text();
+         
+
+          $('#UserIDPass').val(UserId);
+          $('#CB_User').val(UserName);
+          
+          $("#select1").change(function(){
+            $('#cbDepM').val(UsDep);
+          })
+
+          
+
             })
         }
     });
     return
 }
-
-
-function GetUsersForReceiveSeals() {
-    $.post('main.php', {
-      action: 'GetUsersForReceiveSeals'
-    }, function (e) {
-      if (!e.error) {
-        var $select = $('#cbxUser');
-        for (let i = 0; i < e.r.length; i++) {
-            $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
-        }
-      }
-      
-    });
-    return false;
-  }
 
   function GetDepartments() {
     $.post('main.php', {
@@ -72,13 +73,18 @@ function GetUsersForReceiveSeals() {
         for (let i = 0; i < e.r.length; i++) {
             $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
         }
+
+        var $select = $('#cbDepM');
+        for(let j = 0; j <e.r.length; j++){
+          $select.append('<option value=' + e.r[j].value + '>' + e.r[j].Display + '</option>');
+        }
       }
       
     });
     return false;
   }
 
-  
+ /* 
 function GetUserInfo(id) {
 
   var Data = {
@@ -102,4 +108,38 @@ function GetUserInfo(id) {
       }
     }
   });
+}*/
+
+function AddUser(){
+  var data = { 
+    'Role':$('#CB_Roll').val(),
+    'User':$('#CB_User').val()
+  };
+
+  $.post('main.php',{
+    action: 'AddUser',
+    Data: data
+  }, function(e){
+    if (!e.error){
+      Swal.fire({
+        icon: 'success',
+        title: 'Logrado',
+        text: 'El usuario se agrego'
+      })
+    }
+  });
+}
+
+function GetUsersWithOutAccess(){
+  $.post('main.php', {
+    action: 'GetUsersWithOutAccess'
+  }, function(e){
+    if (!e.error){
+      var $select = $('#cbxUser');
+        for (let i = 0; i < e.r.length; i++) {
+            $select.append('<option value=' + e.r[i].Value + '>' + e.r[i].Display + '</option>');
+        }
+    }
+  });
+  return
 }

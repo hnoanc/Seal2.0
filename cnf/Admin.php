@@ -706,7 +706,7 @@ function UpdateSealToDestroy($Data){
 function GetUsersWithOutAccess(){
   session_start();
   $cnx=$this->connectSqlSrv();
-  $sth=$cnx->prepare("Exec sp_GetUsersWithOutAccess");
+  $sth=$cnx->prepare("Exec GetUsersWithOutAccess");
   $retval=$this->ExecuteSelectAssoc($sth);
 
   session_write_close();

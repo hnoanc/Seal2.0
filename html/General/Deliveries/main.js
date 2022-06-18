@@ -4,7 +4,7 @@ $(document).ready(function(){
 })
 
 function LoadDelivery(){
-$.post('main.php', {
+$.post('main.php',{
     action: 'LoadDelivery'
 }, function (e){
     if(!e.error){
