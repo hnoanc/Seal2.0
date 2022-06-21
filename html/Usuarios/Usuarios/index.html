@@ -104,41 +104,12 @@
                                 <th>Corre</th>
                                 <th>Extencion</th>
                                 <th>Oficina</th>
+                                <th>Status</th>
                                 <th>Editar</th>
                             </thead>
                         </table>
                         </form>
                       </div>
-                              <!--TAB DE EDITAR-->
-                <!---      <div id="regis" class="container tab-pane fade"> 
-                        <form >
-                         <div class="row" id="dvCont">
-                             <div id="dvEmail" class="form-group col-md-5">
-                                 <select class="form-control" id="cbEmail">
-                                 </select>
-                                 <label>Email</label>
-                             </div>
-                             <div id="dvEmail2" class="form-group floating-label col-md-5 hidden">
-                                 <input type="text" class="form-control dirty" id="txtEmail">
-                                 <label>Usuario</label>
-                             </div>
-                         </div>
-                         <div class="row">
-                             <div id="divPass" class="form-group floating-label col-md-5">
-                                <textarea class="form-control dirty" cols="4" rows="1" id="txtDesp" maxlength="150">
-                                </textarea>
-                                <label>Descripcion</label>
-                             </div>
-                             <div class="form-group floating-label col-md-5" id="dvDesp">
-                                <input type="text" class="form-control dirty" id="txtPass">
-                                <label>Contraseña</label>
-                             </div>
-                         </div>
-                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                            <button class="btn btn-primary" type="submit" id="btnUsr">Guardar e imprimir formato</button>
-                        </div>
-                        </form>
-                      </div>-->
 
                       <!--TAB DE AÑADIR-->
                        <div id="agre" class="container tab-pane fade"> 
@@ -206,7 +177,20 @@
                                             <div class="form-control-line"></div>
                                         </div>
                                     </div>
-                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-3">
+                                            <label form="PassPass" class="control-label">Status</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline radio-styled" style="margin-top:15px">
+                                            <input type="radio" name="Status" id="rAc" value="1"><span>Activo</span>
+                                        </label>
+                                        <label class="radio-inline radio-styled" styled="margin-top:15px">
+                                            <input type="radio" name="Status"  id="rIn" value="0" ><span>Inactivo</span>
+                                        </label>
+                                        <div class="form-control-line"></div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

@@ -13,6 +13,9 @@ if(isset($_POST['action'])){
         case 'GetDepartments':
           echo $obj-> GetDepartments();
           break;
+          case 'UpdateUser':
+            echo $obj->UpdateUser($_POST['Data']);
+            break;
     }
 }
 ?>

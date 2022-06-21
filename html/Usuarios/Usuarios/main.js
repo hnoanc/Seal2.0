@@ -3,7 +3,6 @@ $(document).ready(function(){
     GetUsersWithOutAccess();
     GetDepartments();
     LoadUsersInfo();
-
     
     $('#btnUsr').click(function () {
       CloseSession()
@@ -12,9 +11,13 @@ $(document).ready(function(){
       $('#btnUsr').click(function (){
         AddUser();
       })
+      $('#btnUpdate').click(function (){
+        UpdateUser();
+      })
+
+
     $('select').select2(); 
 })
-
 
 function LoadUsersInfo(){
     $.post('main.php', {
@@ -34,34 +37,56 @@ function LoadUsersInfo(){
                     {title: "Correo"},
                     {title: "Extencion"},
                     {title: "Oficina"},
+                    {title: "Estatus"},
                     {"data": null,
                 "className": "button",
                 "defaultContent": '<button type="button" name="BtnEd" class="btn btn-icon-toggle" data-toggle="modal" data-target="#ModUs" ><i class="fas fa-edit"></i></button>'}
               ]
             });
 
-            $("#tbUser tbody").on('click','button', function(){
+           $("#tbUser tbody").on('click','button', function(){
 
            var currentRow = $(this).closest("tr");
-
            var UserId = currentRow.find("td:eq(0)").text();
            var UserName = currentRow.find("td:eq(1)").text();
-           var UsDep = currentRow.find("td:eq(2)").text();
+         /*var UsDep = currentRow.find("td:eq(2)").text();*/
+           var UsStat = currentRow.find("td:eq(7)").text();
          
-
           $('#UserIDPass').val(UserId);
           $('#CB_User').val(UserName);
           
-          $("#select1").change(function(){
-            $('#cbDepM').val(UsDep);
-          })
-
-          
-
+          if(UsStat == 'Activo'){
+            $('#rAc').attr('checked', 'checked');
+          }else{
+            $('#rIn').attr('checked', 'checked');
+          }
+          /*$('#cbDepM').val(UsDep); no funciona*/ 
             })
         }
     });
     return
+}
+
+function UpdateUser(){
+
+let status = $('input[type=radio]:checked').val()
+var data ={
+  'Name':$('#CB_User').val(),
+   'ID':$('#UserIDPass').val(),
+   'Status': status
+ };
+ $.post('main.php', {
+   action: 'UpdateUser',
+   Data:data
+ }, function (e){
+   Swal.fire({
+     icon: 'success',
+     title: 'Logrado',
+     text: 'Se ha actualizado el usuario'
+   })
+   LoadUsersInfo();
+ })
+return false;
 }
 
   function GetDepartments() {
@@ -84,38 +109,11 @@ function LoadUsersInfo(){
     return false;
   }
 
- /* 
-function GetUserInfo(id) {
-
-  var Data = {
-    'ID': id
-  };
-
-  $.post('main.php', {
-    action: 'GetUserInfo',
-    Data: Data
-  }, function (e) {
-    if (!e.error) {
-      $('#UserIDPass').val([0][0]);
-      $('#UserPass').val(e.r[0][1]);
-      $('#CB_Roll').val(e.r[0][2]);
-      $('#CB_Roll').trigger('change');
-      if(e.r[0][3]==1){
-        $('input[value=1]').attr('checked', 'checked');
-      }
-      else{
-       $('input[value=0]').attr('checked', 'checked');
-      }
-    }
-  });
-}*/
-
 function AddUser(){
   var data = { 
     'Role':$('#CB_Roll').val(),
     'User':$('#CB_User').val()
   };
-
   $.post('main.php',{
     action: 'AddUser',
     Data: data
